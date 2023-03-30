@@ -16,7 +16,9 @@ const Home = () => {
   const [value, setValue] = React.useState(0);
   return (
     <Container>
-      <Outlet />
+      <section className="content-wrapper">
+        <Outlet />
+      </section>
 
       <div className="routes-wrap">
         <Link to="Menu">Menu</Link>
@@ -61,6 +63,9 @@ export default Home;
 
 const Container = styled.section`
   width: 100%;
+  .content-wrapper {
+    padding: 20px;
+  }
   .routes-wrap {
     display: flex;
     align-items: center;

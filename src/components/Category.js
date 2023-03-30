@@ -49,7 +49,6 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   flex-direction: column;
-  padding: 20px;
 
   .header {
     display: flex;
