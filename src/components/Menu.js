@@ -165,13 +165,14 @@ const Container = styled.div`
   .header {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
+    gap: 120px;
 
     .inner-wrap {
       display: flex;
       align-items: center;
       gap: 30px;
-      width: 100%;
 
       h1 {
         font-size: 24px;

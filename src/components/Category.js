@@ -52,13 +52,14 @@ const Container = styled.div`
   .header {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    gap: 120px;
     width: 100%;
 
     .inner-wrap {
       display: flex;
       align-items: center;
       gap: 30px;
-      width: 100%;
 
       h1 {
         font-size: 24px;
