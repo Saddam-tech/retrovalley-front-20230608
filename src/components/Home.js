@@ -16,11 +16,12 @@ const Home = () => {
     <Container>
       <Outlet />
 
-      {/* <div className="routes-wrap">
+      <div className="routes-wrap">
         <Link to="Menu">Menu</Link>
         <Link to="category">Category</Link>
         <Link to="comics">Comics</Link>
-      </div> */}
+        <Link to="products">Products</Link>
+      </div>
 
       <Paper
         sx={{
@@ -62,6 +63,7 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
+  flex-direction: column;
 
   .routes-wrap {
     display: flex;
