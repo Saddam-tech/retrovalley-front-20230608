@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import CloseIcon from "@mui/icons-material/Close";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import ArrowForwardIosTwoToneIcon from "@mui/icons-material/ArrowForwardIosTwoTone";

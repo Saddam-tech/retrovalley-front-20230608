@@ -9,22 +9,18 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import styled from "styled-components";
 import { Outlet, Link } from "react-router-dom";
-// import HomeIcon from "../Icons/HomeIcon";
-// import SearchIcon from "../Icons/SearchIcon";
 
 const Home = () => {
   const [value, setValue] = React.useState(0);
   return (
     <Container>
-      <section className="content-wrapper">
-        <Outlet />
-      </section>
+      <Outlet />
 
-      <div className="routes-wrap">
+      {/* <div className="routes-wrap">
         <Link to="Menu">Menu</Link>
         <Link to="category">Category</Link>
         <Link to="comics">Comics</Link>
-      </div>
+      </div> */}
 
       <Paper
         sx={{
@@ -62,14 +58,15 @@ const Home = () => {
 export default Home;
 
 const Container = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  .content-wrapper {
-    padding: 20px;
-  }
+
   .routes-wrap {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
     gap: 20px;

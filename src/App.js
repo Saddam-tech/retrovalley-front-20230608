@@ -1,13 +1,13 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
-import styled from "styled-components";
 import Category from "./components/Category";
 import Home from "./components/Home";
 import Menu from "./components/Menu";
+import Products from "./components/Products/Products";
 import { router } from "./router";
 
 export default function App() {
   return (
-    <AppBox className="appBox">
+    <div>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
         rel="preconnect"
@@ -50,16 +50,13 @@ export default function App() {
                 />
               }
             />
+            <Route path="products" element={<Products />} />
           </Route>
           {router.map((el, i) => (
             <Route key={i} path={el.path} element={el.element} />
           ))}
         </Routes>
       </HashRouter>
-    </AppBox>
+    </div>
   );
 }
-
-const AppBox = styled.div`
-  display: flex;
-`;
