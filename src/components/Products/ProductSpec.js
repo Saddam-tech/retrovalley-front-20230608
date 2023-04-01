@@ -3,13 +3,14 @@ import styled from "styled-components";
 import retro_toy from "../../img/retro_toy.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
-
+import { useNavigate } from "react-router-dom";
 const ProductSpec = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="header">
         <div className="inner-wrap">
-          <ArrowBackIosIcon />
+          <ArrowBackIosIcon onClick={() => navigate(-1)} />
           <h1>레트로토이</h1>
         </div>
         <ShoppingCartTwoToneIcon />

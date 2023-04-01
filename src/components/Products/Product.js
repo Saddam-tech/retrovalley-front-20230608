@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({
+  id,
   nft_img_src,
   profile_src,
   img_title,
@@ -9,8 +11,9 @@ const Product = ({
   username,
   followers,
 }) => {
+  const navigate = useNavigate();
   return (
-    <Container>
+    <Container onClick={() => navigate(`/products/product/${id}`)}>
       <img className="nft-sample" src={nft_img_src} alt="nft-sample" />
       <div className="title">
         <h1>{img_title}</h1>
