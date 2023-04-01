@@ -1,26 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import nft_sample from "../../img/nft_sample.png";
-import user_profile_picture from "../../img/user_profile_picture.png";
 
-const Product = () => {
+const Product = ({
+  nft_img_src,
+  profile_src,
+  img_title,
+  img_sub_title,
+  username,
+  followers,
+}) => {
   return (
     <Container>
-      <img className="nft-sample" src={nft_sample} alt="nft-sample" />
+      <img className="nft-sample" src={nft_img_src} alt="nft-sample" />
       <div className="title">
-        <h1>철인28호</h1>
-        <p>홍길동 1981년 발행</p>
+        <h1>{img_title}</h1>
+        <p>{img_sub_title}</p>
       </div>
       <div className="owner-info">
-        <img
-          className="profile-pic"
-          src={user_profile_picture}
-          alt="profile_pic"
-        />
+        <img className="profile-pic" src={profile_src} alt="profile_pic" />
         <div className="user-credentials">
-          <p className="bold">만화보는 재미니 558</p>
+          <p className="bold">{username}</p>
           <p className="followers">
-            Followers <span>♥ 215</span>
+            Followers <span>♥ {followers}</span>
           </p>
         </div>
       </div>

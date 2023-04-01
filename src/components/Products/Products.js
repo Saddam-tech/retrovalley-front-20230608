@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import SearchIcon from "@mui/icons-material/Search";
 import Product from "./Product";
+import { products } from "../../data/products";
+import { filterVal } from "../../data/filterVal";
+import FilterDropdown from "./FilterDropdown";
 
 const Products = () => {
+  const [dropdown, setDropdown] = useState(false);
   return (
-    <Container>
+    <Container switch={dropdown}>
       <div className="header">
         <div className="inner-wrap">
           <ArrowBackIosIcon />
@@ -19,16 +23,27 @@ const Products = () => {
       <div className="orange-tab">
         <SearchIcon sx={{ color: "#ffffff" }} />
         <p>물품의 상세조건을 변경해서 검색해보세요</p>
-        <button className="filter-btn">FILTER</button>
+        <button
+          onClick={() => setDropdown((prev) => !prev)}
+          className="filter-btn"
+        >
+          FILTER
+        </button>
       </div>
+      <FilterDropdown dropdown={dropdown} filterArr={filterVal} />
 
       <section className="products">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products.map((el, i) => (
+          <Product
+            key={i}
+            img_title={el.img_title}
+            img_sub_title={el.img_sub_title}
+            username={el.username}
+            followers={el.followers}
+            nft_img_src={require(`../../img/nft_sample_${i}.png`)}
+            profile_src={require(`../../img/profile_picture_${i}.png`)}
+          />
+        ))}
       </section>
     </Container>
   );
@@ -75,23 +90,24 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #ff9771;
+    background-color: ${(props) => (props.switch ? "#999999" : "#ff9771")};
     width: 100%;
     height: 70px;
+
     p {
       font-size: 12px;
       color: #ffffff;
     }
     .filter-btn {
       border-radius: 6px;
-      background-color: #f7f7f7;
+      background-color: ${(props) => (props.switch ? "#ff9771" : "#f7f7f7")};
       color: #000000;
-      font-size: 10px;
+      font-size: 14px;
       padding: 5px;
       outline: none;
       border: none;
       font-weight: 600;
-      width: 60px;
+      width: 75px;
     }
   }
 
@@ -104,5 +120,6 @@ const Container = styled.div`
     flex-wrap: wrap;
     overflow-x: scroll;
     padding-bottom: 120px;
+    background-color: #f6f6f6;
   }
 `;
