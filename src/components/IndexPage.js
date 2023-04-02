@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const IndexPage = () => {
   return (
     <Container>
-      <Link to="Menu">1. Menu</Link>
-      <Link to="category">2. Category</Link>
-      <Link to="comics">3. Comics</Link>
-      <Link to="products">4. Products</Link>
+      <Link to="home/menu">1. Menu</Link>
+      <Link to="home/category">2. Category</Link>
+      <Link to="home/comics">3. Comics</Link>
+      <Link to="home/products">4. Products</Link>
       <Link to="products/product/1">5. Specific product description page</Link>
       <Link to="/webtoon">6. Webtoon</Link>
       <Link to="/comicbook/1">7. Comicbook</Link>
