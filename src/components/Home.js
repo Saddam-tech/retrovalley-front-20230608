@@ -16,14 +16,6 @@ const Home = () => {
     <Container>
       <Outlet />
 
-      <div className="routes-wrap">
-        <Link to="Menu">Menu</Link>
-        <Link to="category">Category</Link>
-        <Link to="comics">Comics</Link>
-        <Link to="products">Products</Link>
-        <Link to="products/product/1">Specific product description page</Link>
-      </div>
-
       <Paper
         sx={{
           position: "fixed",

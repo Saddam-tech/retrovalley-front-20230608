@@ -1,6 +1,7 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Category from "./components/Category";
 import Home from "./components/Home";
+import IndexPage from "./components/IndexPage";
 import Menu from "./components/Menu";
 import Products from "./components/Products/Products";
 import { router } from "./router";
@@ -28,7 +29,8 @@ export default function App() {
       />
       <HashRouter>
         <Routes>
-          <Route exact path="/" element={<Home />}>
+          <Route path="/" element={<IndexPage />} />
+          <Route exact path="/home" element={<Home />}>
             <Route path="menu" element={<Menu />} />
             <Route
               path="category"
