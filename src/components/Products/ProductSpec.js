@@ -27,6 +27,9 @@ const ProductSpec = () => {
           <img className="watermark" src={watermark} alt="watermark" />
           <img className="like-btn-red" src={like_btn_red} alt="like_btn_red" />
         </div>
+        <div className="tab-2">
+          <p>1/5</p>
+        </div>
         <div className="tab-3">
           <img src={mana_pay} alt="mana-pay" />
           <p>지금 마나페이로 구매하고, 마나를 모으세요!</p>
@@ -141,6 +144,23 @@ const Container = styled.section`
       }
       .watermark {
         width: 120px;
+      }
+    }
+    .tab-2 {
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      justify-content: flex-end;
+      bottom: 40px;
+
+      p {
+        margin: 30px;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #ffffff;
+        font-weight: 600;
+        border-radius: 5px;
       }
     }
     .tab-3 {

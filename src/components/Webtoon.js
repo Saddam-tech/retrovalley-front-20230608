@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import webtoon from "../img/webtoon.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
-import profile_img from "../img/profile_img.png";
 import mana_pay from "../img/mana_pay.png";
 import like_btn from "../img/like-btn.png";
-import mana from "../img/mana.png";
+import like_btn_red from "../img/like-btn-red.png";
+import bookmark from "../img/bookmark.png";
+import webtoon from "../img/webtoon.png";
+import watermark from "../img/watermark.png";
+import check_gray from "../img/check-gray.png";
+import check_orange from "../img/check-orange.png";
 import { useNavigate } from "react-router-dom";
+const blocks = ["첫화보기", "정주행", "최신화", "최신화", "북마크"];
 const Webtoon = () => {
   const navigate = useNavigate();
   return (
@@ -21,56 +25,106 @@ const Webtoon = () => {
       </div>
       <div className="img-holder">
         <img className="product-image" src={webtoon} alt="retro-toy" />
+        <div className="tab-1">
+          <img className="watermark" src={watermark} alt="watermark" />
+          <img className="like-btn-red" src={like_btn_red} alt="like_btn_red" />
+        </div>
+        {/* <div className="tab-2">
+          <p>1/1</p>
+        </div> */}
+        <div className="tab-3">
+          <img src={mana_pay} alt="mana-pay" />
+          <p>지금 마나페이로 구매하고, 마나를 모으세요!</p>
+        </div>
       </div>
-      <section className="sub-content">
-        <div className="inner-content">
-          <img className="profile-pic" src={profile_img} alt="profile_img" />
-          <h1>니가가라 하와이</h1>
-        </div>
-        <div className="inner-content">
-          <p>
-            <span>♥</span> 184 follows
-          </p>
-          <div className="inner-content">
-            <img className="coin" src={mana} alt="coin" />
-            <p>521 mana</p>
-          </div>
-        </div>
-      </section>
-      <section className="sub-content-1">
-        <h1>86 포니엑셀 가져가세요!</h1>
-        <div className="inner-content">
-          <div className="price-wrap">
-            <h1>64,000원</h1>
-            <img src={mana_pay} alt="mana-pay-logo" />
-          </div>
-          <p>♥ 15</p>
-        </div>
-        <div className="description-wrap">
-          <h3>포니 엑셀 피규어 RED / 레드컬러 / 1 :30 스케일 / 완전포장</h3>
-          <p>장난감 / 레트로. 3시간 전</p>
-        </div>
-      </section>
-      <section className="text-area">
-        <p className="light">관심 12 / 조회 268</p>
-        <p>
-          현대자동차의 전륜구동 소형 승용차. 개발 프로젝트 코드네임은 X카.[4]
-          포니의 후속 모델로 1985년 2월에 출시했으며, 대한민국 최초의 전륜구동
-          승용차이다.
-        </p>
-        <p>
-          사이즈 가로 27 세로 50 폭 25 전체적으로 박스 구성품 모두 있으며,
-          디테일과 레트로 감성 너무 좋아서 인테리어 감성 최고에요.
-        </p>
-        <p>
-          타 중고사이트에서 116,000원에 팔린 이력 있어요… 쿨거래시 5,000원!!!
-        </p>
 
-        <p className="footer">
-          <strong>거래팁</strong> 마나페이로 간편하게 송금이 가능해요.{" "}
-          <span className="underline">자세히보기</span>
+      <section className="sub-section">
+        <h1>비뢰도</h1>
+        <p>작가 오주,Awin, 검류혼 | 총편수 총 152화</p>
+        <p>
+          홀로 길러주신 아버지를 돌림병으로 잃고 10세의 어린 나이에 혈혈단신이
+          된 비류연. 조각사였던 아버지에게 배운 기술로 부모님의 조각상을 만들어
+          두분의 묘 앞에 세워두는데, 지나가던 노인이 그걸 보더니 자신을 사부로
+          삼으면 천하제일 무공을 가르쳐주겠다고 한다. 수상쩍지만 달리 갈 곳도
+          없고, 그럴듯해 보이는 무공에 혹해 비류연은 그를 따라가고 마는데….
         </p>
+        <div className="blocks">
+          {blocks.map((el, i) => (
+            <div className={i === 0 && "color-orange"} key={i}>
+              {i === 3 && <img src={like_btn_red} alt="icons" />}
+              {i === 4 && <img src={bookmark} alt="icons" />}
+              <p>{el}</p>
+            </div>
+          ))}
+        </div>
       </section>
+
+      <section className="sub-section-1">
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_orange} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button>무료</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button>무료</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button>무료</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button className="low-padding">10 마나</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button className="low-padding">10 마나</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button className="low-padding">10 마나</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button className="low-padding">10 마나</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button className="low-padding">10 마나</button>
+        </div>
+        <div className="row">
+          <div className="wrap-1">
+            <img src={check_gray} alt="tick" />
+            <h1>비뢰도 1화</h1>
+          </div>
+          <button className="low-padding">10 마나</button>
+        </div>
+      </section>
+
       <section className="bottom-bar">
         <img src={like_btn} alt="like-btn" />
         <div className="btn-wrap">
@@ -108,122 +162,160 @@ const Container = styled.section`
     }
   }
   .img-holder {
+    position: relative;
     width: 100%;
     .product-image {
       width: 100vw;
       max-height: 330px;
       object-fit: cover;
     }
-  }
-
-  .sub-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #f7f7f7;
-    padding: 15px;
-    .inner-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-
-      h1 {
-        font-size: 14px;
-        font-weight: 600;
-      }
-
-      .profile-pic {
-        width: 40px;
-      }
-      .coin {
-        width: 20px;
-      }
-      p {
-        font-size: 12px;
-        font-weight: 600;
-        color: #999999;
-        span {
-          color: #ff9771;
-        }
-      }
-    }
-  }
-  .sub-content-1 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 5px;
-    padding: 20px;
-    border-bottom: 1px solid #ededed;
-    h1 {
-      margin: 0;
-      font-weight: 600;
-      font-size: 25px;
-    }
-    p {
-      margin: 0;
-    }
-
-    .inner-content {
+    .tab-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
-
-      .price-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        img {
-          width: 60px;
-        }
+      img {
+        padding: 20px 30px;
       }
-      p {
-        color: #999999;
-        font-weight: 600;
+      .like-btn-red {
+        width: 25px;
+      }
+      .watermark {
+        width: 120px;
       }
     }
-    .description-wrap {
-      h3 {
-        margin: 10px 0;
-        font-size: 14px;
-      }
+    .tab-2 {
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      justify-content: flex-end;
+      bottom: 40px;
+
       p {
-        color: #999999;
+        margin: 30px;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #ffffff;
         font-weight: 600;
+        border-radius: 5px;
+      }
+    }
+    .tab-3 {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+
+      p {
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      img {
+        width: 60px;
+        padding-left: 15px;
       }
     }
   }
 
-  .text-area {
-    padding: 25px;
-
-    .light {
-      color: #999999;
-      font-weight: 600;
-      margin-bottom: 40px;
-      font-size: 14px;
+  .sub-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #ededed;
+    h1 {
+      margin: 0;
+      font-size: 22px;
     }
     p {
-      color: #000000;
-      font-weight: 500;
-      font-size: 16px;
+      font-weight: 600;
+      font-size: 14px;
     }
 
-    .footer {
-      text-align: center;
-      padding: 15px 10px;
-      margin: 20px 0;
-      font-size: 13px;
-      background-color: #ededed;
-      border-radius: 10px;
+    .blocks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+      .color-orange {
+        background-color: #ff9771;
 
-      .underline {
-        text-decoration: underline;
+        p {
+          color: #000000;
+        }
+      }
+      div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        padding: 5px 10px;
+
+        p {
+          font-size: 12px;
+          margin: 0;
+          color: #ffffff;
+          font-weight: 600;
+        }
+        img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  .sub-section-1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-top: 1px solid #ededed;
+
+      .wrap-1 {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        h1 {
+          font-size: 16px;
+          color: #999999;
+          font-weight: 600;
+        }
+
+        img {
+          width: 16px;
+        }
+      }
+      .low-padding {
+        padding: 3px 10px;
+      }
+      button {
+        border: none;
+        font-weight: 900;
+        font-size: 12px;
+        padding: 3px 18px;
+        background-color: #65bc7b;
+        color: #ffffff;
+        border-radius: 3px;
       }
     }
   }
