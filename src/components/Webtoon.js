@@ -1,16 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import retro_toy from "../../img/retro_toy.png";
+import webtoon from "../img/webtoon.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
-import profile_img from "../../img/profile_img.png";
-import mana_pay from "../../img/mana_pay.png";
-import like_btn from "../../img/like-btn.png";
-import like_btn_red from "../../img/like-btn-red.png";
-import watermark from "../../img/watermark.png";
-import mana from "../../img/mana.png";
+import profile_img from "../img/profile_img.png";
+import mana_pay from "../img/mana_pay.png";
+import like_btn from "../img/like-btn.png";
+import mana from "../img/mana.png";
 import { useNavigate } from "react-router-dom";
-const ProductSpec = () => {
+const Webtoon = () => {
   const navigate = useNavigate();
   return (
     <Container>
@@ -22,15 +20,7 @@ const ProductSpec = () => {
         <ShoppingCartTwoToneIcon />
       </div>
       <div className="img-holder">
-        <img className="product-image" src={retro_toy} alt="retro-toy" />
-        <div className="tab-1">
-          <img className="watermark" src={watermark} alt="watermark" />
-          <img className="like-btn-red" src={like_btn_red} alt="like_btn_red" />
-        </div>
-        <div className="tab-3">
-          <img src={mana_pay} alt="mana-pay" />
-          <p>지금 마나페이로 구매하고, 마나를 모으세요!</p>
-        </div>
+        <img className="product-image" src={webtoon} alt="retro-toy" />
       </div>
       <section className="sub-content">
         <div className="inner-content">
@@ -92,7 +82,7 @@ const ProductSpec = () => {
   );
 };
 
-export default ProductSpec;
+export default Webtoon;
 
 const Container = styled.section`
   display: flex;
@@ -118,51 +108,11 @@ const Container = styled.section`
     }
   }
   .img-holder {
-    position: relative;
     width: 100%;
     .product-image {
       width: 100vw;
       max-height: 330px;
       object-fit: cover;
-    }
-    .tab-1 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      img {
-        padding: 20px 30px;
-      }
-      .like-btn-red {
-        width: 25px;
-      }
-      .watermark {
-        width: 120px;
-      }
-    }
-    .tab-3 {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.4);
-
-      p {
-        font-size: 14px;
-        font-weight: 600;
-        color: #ffffff;
-      }
-      img {
-        width: 60px;
-        padding-left: 15px;
-      }
     }
   }
 
