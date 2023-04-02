@@ -5,6 +5,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import profile_img from "../../img/profile_img.png";
 import mana_pay from "../../img/mana_pay.png";
+import like_btn from "../../img/like-btn.png";
 import mana from "../../img/mana.png";
 import { useNavigate } from "react-router-dom";
 const ProductSpec = () => {
@@ -66,9 +67,16 @@ const ProductSpec = () => {
         </p>
 
         <p className="footer">
-          <strong>거래팁</strong> 마나페이로 간편하게 송금이 가능해요.
-          자세히보기
+          <strong>거래팁</strong> 마나페이로 간편하게 송금이 가능해요.{" "}
+          <span className="underline">자세히보기</span>
         </p>
+      </section>
+      <section className="bottom-bar">
+        <img src={like_btn} alt="like-btn" />
+        <div className="btn-wrap">
+          <button className="go-chat-btn">채팅하기</button>
+          <button className="go-pay-btn">마나페이 구매</button>
+        </div>
       </section>
     </Container>
   );
@@ -197,10 +205,12 @@ const Container = styled.section`
     .light {
       color: #999999;
       font-weight: 600;
+      margin-bottom: 40px;
+      font-size: 14px;
     }
     p {
       color: #000000;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 16px;
     }
 
@@ -211,6 +221,46 @@ const Container = styled.section`
       font-size: 13px;
       background-color: #ededed;
       border-radius: 10px;
+
+      .underline {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 30px 20px;
+    border-top: 1px solid #ededed;
+
+    img {
+      width: 20px;
+    }
+
+    .btn-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        border: none;
+        outline: none;
+        padding: 10px 25px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .go-chat-btn {
+        background-color: #ff9771;
+        color: #ffffff;
+      }
+      .go-pay-btn {
+        background-color: #65bc7b;
+      }
     }
   }
 `;
