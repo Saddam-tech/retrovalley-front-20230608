@@ -50,7 +50,7 @@ const Webtoon = () => {
         </p>
         <div className="blocks">
           {blocks.map((el, i) => (
-            <div className={i === 0 && "color-orange"} key={i}>
+            <div className={i === 0 ? "color-orange" : ""} key={i}>
               {i === 3 && <img src={like_btn_red} alt="icons" />}
               {i === 4 && <img src={bookmark} alt="icons" />}
               <p>{el}</p>
