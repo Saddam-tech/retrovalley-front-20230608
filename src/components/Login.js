@@ -116,6 +116,10 @@ const Container = styled.section`
       width: 100%;
       border-radius: 10px;
     }
+    input:focus {
+      border: none;
+      outline: none;
+    }
   }
 
   .check-box-holder {

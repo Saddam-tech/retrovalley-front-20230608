@@ -3,6 +3,7 @@ import ProductSpec from "./components/Products/ProductSpec";
 import Webtoon from "./components/Webtoon";
 import ComicBook from "./components/ComicBook";
 import Login from "./components/Login";
+import ProductUpload from "./components/ProductUpload";
 
 export const router = [
   {
@@ -29,5 +30,10 @@ export const router = [
     route: "ComicBook",
     path: "/comicbook/:id",
     element: <ComicBook />,
+  },
+  {
+    route: "ProductUpload",
+    path: "/product_upload",
+    element: <ProductUpload />,
   },
 ];
