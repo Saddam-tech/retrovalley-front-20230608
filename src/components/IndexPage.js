@@ -12,6 +12,9 @@ const IndexPage = () => {
       <Link to="products/product/1">5. Specific product description page</Link>
       <Link to="/webtoon">6. Webtoon</Link>
       <Link to="/comicbook/1">7. Comicbook</Link>
+      <Link to="/login">8. Login</Link>
+      <Link to="/product_upload">9. Product upload</Link>
+      <Link to="/banners">10. Banners</Link>
     </Container>
   );
 };
