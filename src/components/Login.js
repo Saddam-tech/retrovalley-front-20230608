@@ -213,6 +213,7 @@ const Container = styled.section`
       p {
         font-size: 13px;
         margin: 0;
+        color: #999999;
       }
 
       img {
