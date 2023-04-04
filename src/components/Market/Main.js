@@ -14,12 +14,29 @@ import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
 import movie_figure_icon from "../../img/movie-figure.svg";
 import profile_1 from "../../img/profile_1.png";
+import AnimatedCarousel from "../Carousel/AnimatedCarousel";
 
 const images = [banner_1, banner_2, banner_3];
+
 const links = ["추천상품", "레밸UP", "레밸랭킹"];
+const categories = [
+  "나이키",
+  "스톤아일랜드",
+  "환경부",
+  "Apple 아이맥 5K",
+  "나이키",
+  "스톤아일랜드",
+  "환경부",
+  "Apple 아이맥 5K",
+  "나이키",
+  "스톤아일랜드",
+  "환경부",
+  "Apple 아이맥 5K",
+];
 const Main = () => {
   const [isTransparent, setIsTransparent] = React.useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(0);
 
   const handleScroll = () => {
     if (window.scrollY === 0) {
@@ -59,8 +76,8 @@ const Main = () => {
       <section className="sub-nav-outer">
         <section className="sub-nav-inner">
           {new Array(6).fill(movie_figure_icon).map((el, i) => (
-            <div className="img-wrap">
-              <img key={i} src={el} alt="movie-figure" />
+            <div key={i} className="img-wrap">
+              <img src={el} alt="movie-figure" />
               <p>청동거인</p>
             </div>
           ))}
@@ -101,9 +118,7 @@ const Main = () => {
           <div key={i} className="event">
             <img src={profile_1} alt="profile_pic" />
             <div className="text-wrap">
-              <h1 className="title-h1">
-                84태권브이 한정판 에디션 + 제품인증서 양도합니다.
-              </h1>
+              <h1>84태권브이 한정판 에디션 + 제품인증서 양도합니다.</h1>
               <div className="inner-wrap">
                 <p>강남구 대치2동 / 11일전</p>
                 <p>♥ 15</p>
@@ -116,6 +131,37 @@ const Main = () => {
         <p>더보기</p>
         <KeyboardArrowDownIcon sx={{ color: "#999999" }} />
       </div>
+      <section className="titles-2">
+        <h1>최고의 레트로 브렌드 팔로우하면 이득!</h1>
+        <p>브랜드와 팔로우하고, 나만의 레트로를 자랑하면, 꿀상품 뚝뚝~!</p>
+      </section>
+      <section className="animated-carousel">
+        <AnimatedCarousel
+          images={images}
+          autoplay={true}
+          autoplayDelay={3000}
+        />
+      </section>
+      <section className="search-bar">
+        <div className="search-content">
+          <SearchIcon sx={{ color: "#999999" }} />
+          <input type="text" placeholder="브랜드를 검색해보세요" />
+        </div>
+      </section>
+
+      <section className="slider-bar">
+        <section className="tape">
+          {categories.map((el, i) => (
+            <p
+              onClick={() => setActiveCategory(i)}
+              className={activeCategory === i ? "active" : ""}
+              key={i}
+            >
+              {el}
+            </p>
+          ))}
+        </section>
+      </section>
     </Container>
   );
 };
@@ -129,6 +175,10 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   background-color: "#f6f6f6";
+
+  .animated-carousel {
+    margin: 20px;
+  }
 
   .header {
     display: flex;
@@ -268,7 +318,7 @@ const Container = styled.div`
         flex-direction: column;
         gap: 15px;
         margin: 20px 0;
-        .title-h1 {
+        h1 {
           font-size: 13px;
           color: #191919;
           margin: 0;
@@ -294,10 +344,79 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 120px;
-
     p {
       color: #999999;
+    }
+  }
+  .titles-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 240px;
+    /* margin-bottom: 120px; */
+
+    h1 {
+      font-size: 29px;
+      font-weight: 500;
+      margin: 40px 0 10px;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: center;
+      max-width: 170px;
+      line-height: 24px;
+      color: #999999;
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #ededed;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+
+    .search-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      input {
+        border: none;
+        background-color: #ededed;
+      }
+      input:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .slider-bar {
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 180px;
+    .tape {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 10px;
+      gap: 10px;
+      p {
+        white-space: nowrap;
+        padding: 8px 30px;
+        background-color: #313744;
+        color: #ffffff;
+        border-radius: 30px;
+      }
+      .active {
+        background-color: #65bc7b;
+      }
     }
   }
 `;
