@@ -15,7 +15,6 @@ const Home = () => {
   return (
     <Container>
       <Outlet />
-
       <Paper
         sx={{
           position: "fixed",
