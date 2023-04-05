@@ -8,12 +8,13 @@ import logo_65bc7b from "../../img/main/logo-65bc7b.png";
 import logo_ffffff from "../../img/main/logo-ffffff.png";
 import Item from "./Item";
 import Carousel from "../Carousel/Carousel";
-import { products } from "../../data/products";
+import { items } from "../../data/products";
 import banner_1 from "../../img/banners/banner-1.png";
 import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
 import movie_figure_icon from "../../img/movie-figure.svg";
 import profile_1 from "../../img/profile_1.png";
+import check_orange from "../../img/checked.svg";
 import AnimatedCarousel from "../Carousel/AnimatedCarousel";
 
 const images = [banner_1, banner_2, banner_3];
@@ -98,70 +99,118 @@ const Main = () => {
           ))}
         </div>
       </section>
-      <section className="products">
-        {products.map((el, i) => (
-          <Item
-            key={i}
-            id={i}
-            img_title={el.img_title}
-            img_sub_title={el.img_sub_title}
-            username={el.username}
-            followers={el.followers}
-            nft_img_src={require(`../../img/nft_sample_${i}.png`)}
-            profile_src={require(`../../img/profile_picture_${i}.png`)}
-          />
-        ))}
-      </section>
+      {activeIndex === 0 && (
+        <>
+          <section className="products">
+            {items.map((el, i) => (
+              <Item
+                key={i}
+                id={i}
+                img_width="175px"
+                img_height="175px"
+                price={el.price}
+                description={el.description}
+                img_src={require(`../../img/nft_sample_${i}.png`)}
+              />
+            ))}
+          </section>
+        </>
+      )}
 
-      <section className="events">
-        {new Array(5).fill("").map((_, i) => (
-          <div key={i} className="event">
-            <img src={profile_1} alt="profile_pic" />
-            <div className="text-wrap">
-              <h1>84태권브이 한정판 에디션 + 제품인증서 양도합니다.</h1>
-              <div className="inner-wrap">
-                <p>강남구 대치2동 / 11일전</p>
-                <p>♥ 15</p>
+      {activeIndex === 1 && (
+        <>
+          <section className="events">
+            {new Array(5).fill("").map((_, i) => (
+              <div key={i} className="event">
+                <img src={profile_1} alt="profile_pic" />
+                <div className="text-wrap">
+                  <h1>84태권브이 한정판 에디션 + 제품인증서 양도합니다.</h1>
+                  <div className="inner-wrap">
+                    <p>강남구 대치2동 / 11일전</p>
+                    <p>♥ 15</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
+          </section>
+          <div className="more-wrap">
+            <p>더보기</p>
+            <KeyboardArrowDownIcon sx={{ color: "#999999" }} />
           </div>
-        ))}
-      </section>
-      <div className="more-wrap">
-        <p>더보기</p>
-        <KeyboardArrowDownIcon sx={{ color: "#999999" }} />
-      </div>
-      <section className="titles-2">
-        <h1>최고의 레트로 브렌드 팔로우하면 이득!</h1>
-        <p>브랜드와 팔로우하고, 나만의 레트로를 자랑하면, 꿀상품 뚝뚝~!</p>
-      </section>
-      <section className="animated-carousel">
-        <AnimatedCarousel
-          images={images}
-          autoplay={true}
-          autoplayDelay={3000}
-        />
-      </section>
-      <section className="search-bar">
-        <div className="search-content">
-          <SearchIcon sx={{ color: "#999999" }} />
-          <input type="text" placeholder="브랜드를 검색해보세요" />
-        </div>
-      </section>
+          <section className="titles-2">
+            <h1>최고의 레트로 브렌드 팔로우하면 이득!</h1>
+            <p>브랜드와 팔로우하고, 나만의 레트로를 자랑하면, 꿀상품 뚝뚝~!</p>
+          </section>
+          <section className="animated-carousel">
+            <AnimatedCarousel
+              images={images}
+              autoplay={true}
+              autoplayDelay={3000}
+            />
+          </section>
+          <section className="search-bar">
+            <div className="search-content">
+              <SearchIcon sx={{ color: "#999999" }} />
+              <input type="text" placeholder="브랜드를 검색해보세요" />
+            </div>
+          </section>
 
-      <section className="slider-bar">
-        <section className="tape">
-          {categories.map((el, i) => (
-            <p
-              onClick={() => setActiveCategory(i)}
-              className={activeCategory === i ? "active" : ""}
-              key={i}
-            >
-              {el}
-            </p>
-          ))}
-        </section>
-      </section>
+          <section className="slider-bar">
+            <section className="tape">
+              {categories.map((el, i) => (
+                <p
+                  onClick={() => setActiveCategory(i)}
+                  className={activeCategory === i ? "active" : ""}
+                  key={i}
+                >
+                  {el}
+                </p>
+              ))}
+            </section>
+          </section>
+          <section className="filters">
+            <div className="more-wrap">
+              <p>더보기</p>
+              <KeyboardArrowDownIcon sx={{ color: "#999999" }} />
+            </div>
+            <div className="more-wrap right-side">
+              <p>나의 팔로잉</p>
+              <img src={check_orange} alt="checkbox" />
+            </div>
+          </section>
+          <section className="sale-section-wrapper">
+            {new Array(7).fill("*").map((el, i) => (
+              <section className="sale-section">
+                <div className="header-title">
+                  <div className="wrap-1">
+                    <img src={movie_figure_icon} alt="movie-figure-icon" />
+                    <div className="wrap-2">
+                      <h1>마나가게 어페럴</h1>
+                      <p>Nike. 154,981개</p>
+                    </div>
+                  </div>
+                  <button>팔로우</button>
+                </div>
+                <section className="slide-items">
+                  <div className="tape">
+                    {items.map((el, i) => (
+                      <Item
+                        key={i}
+                        img_width="130px"
+                        img_height="130px"
+                        id={i}
+                        price={el.price}
+                        description={el.description}
+                        img_src={require(`../../img/nft_sample_${i}.png`)}
+                      />
+                    ))}
+                  </div>
+                </section>
+              </section>
+            ))}
+          </section>
+        </>
+      )}
     </Container>
   );
 };
@@ -284,9 +333,9 @@ const Container = styled.div`
   .products {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 0 10px;
-    gap: 10px;
+    margin-bottom: 120px;
     flex-wrap: wrap;
     overflow-x: scroll;
   }
@@ -400,7 +449,6 @@ const Container = styled.div`
   .slider-bar {
     width: 100%;
     overflow-x: scroll;
-    margin-bottom: 180px;
     .tape {
       display: flex;
       align-items: flex-start;
@@ -416,6 +464,107 @@ const Container = styled.div`
       }
       .active {
         background-color: #65bc7b;
+      }
+    }
+  }
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #ededed;
+    width: 80%;
+
+    .more-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        color: #999999;
+      }
+      img {
+        width: 20px;
+      }
+    }
+    .right-side {
+      gap: 12px;
+
+      p {
+        color: #000000;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .sale-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 170px;
+    .sale-section {
+      .header-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px;
+
+        .wrap-1 {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 20px;
+          width: 100%;
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+          }
+          .wrap-2 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            h1 {
+              font-size: 18px;
+              font-weight: 700;
+              margin: 2px;
+            }
+            p {
+              font-size: 12px;
+              font-weight: 900;
+              color: #999999;
+              margin: 2px;
+            }
+          }
+        }
+        button {
+          white-space: nowrap;
+          padding: 5px 20px;
+          color: #ffffff;
+          background-color: #ff9771;
+          font-weight: 700;
+          border: none;
+          border-radius: 10px;
+        }
+        .disabled {
+          color: #999999;
+          background-color: #ededed;
+        }
+      }
+      .slide-items {
+        overflow-x: scroll;
+        margin: 10px;
+        .tape {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin: 10px;
+          gap: 10px;
+        }
       }
     }
   }
