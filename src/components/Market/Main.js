@@ -110,7 +110,7 @@ const Main = () => {
                 img_height="175px"
                 price={el.price}
                 description={el.description}
-                img_src={require(`../../img/nft_sample_${i}.png`)}
+                img_src={require(`../../img/ranger-${i}.png`)}
               />
             ))}
           </section>
@@ -201,7 +201,7 @@ const Main = () => {
                         id={i}
                         price={el.price}
                         description={el.description}
-                        img_src={require(`../../img/nft_sample_${i}.png`)}
+                        img_src={require(`../../img/saleitem-${i}.png`)}
                       />
                     ))}
                   </div>
