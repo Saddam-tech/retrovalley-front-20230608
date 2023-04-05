@@ -9,12 +9,13 @@ const IndexPage = () => {
       <Link to="home/category">2. Category</Link>
       <Link to="home/comics">3. Comics</Link>
       <Link to="home/products">4. Products</Link>
-      <Link to="products/product/1">5. Specific product description page</Link>
-      <Link to="/webtoon">6. Webtoon</Link>
-      <Link to="/comicbook/1">7. Comicbook</Link>
-      <Link to="/login">8. Login</Link>
-      <Link to="/product_upload">9. Product upload</Link>
-      <Link to="/banners">10. Banners</Link>
+      <Link to="/home/main">5. Main</Link>
+      <Link to="products/product/1">6. Specific product description page</Link>
+      <Link to="/webtoon">7. Webtoon</Link>
+      <Link to="/comicbook/1">8. Comicbook</Link>
+      <Link to="/login">9. Login</Link>
+      <Link to="/product_upload">10. Product upload</Link>
+      <Link to="/banners">11. Banners</Link>
     </Container>
   );
 };
