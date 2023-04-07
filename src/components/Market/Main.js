@@ -12,12 +12,14 @@ import { items } from "../../data/products";
 import banner_1 from "../../img/banners/banner-1.png";
 import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
+import banner_7 from "../../img/banners/banner-7.png";
+import banner_8 from "../../img/banners/banner-8.png";
 import movie_figure_icon from "../../img/movie-figure.svg";
 import profile_1 from "../../img/profile_1.png";
 import check_orange from "../../img/checked.svg";
 import AnimatedCarousel from "../Carousel/AnimatedCarousel";
 
-const images = [banner_1, banner_2, banner_3];
+const images = [banner_7, banner_8, banner_1, banner_2, banner_3];
 
 const links = ["추천상품", "레밸UP", "레밸랭킹"];
 const categories = [
@@ -76,9 +78,12 @@ const Main = () => {
       <Carousel images={images} autoplay={true} autoplayDelay={3000} />
       <section className="sub-nav-outer">
         <section className="sub-nav-inner">
-          {new Array(6).fill(movie_figure_icon).map((el, i) => (
+          {new Array(7).fill("*").map((el, i) => (
             <div key={i} className="img-wrap">
-              <img src={el} alt="movie-figure" />
+              <img
+                src={require(`../../img/main/category-slot-${i}.png`)}
+                alt="movie-figure"
+              />
               <p>청동거인</p>
             </div>
           ))}
@@ -180,7 +185,7 @@ const Main = () => {
           </section>
           <section className="sale-section-wrapper">
             {new Array(7).fill("*").map((el, i) => (
-              <section className="sale-section">
+              <section key={i} className="sale-section">
                 <div className="header-title">
                   <div className="wrap-1">
                     <img src={movie_figure_icon} alt="movie-figure-icon" />
@@ -261,16 +266,17 @@ const Container = styled.div`
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      gap: 30px;
-      margin: 25px 20px 10px;
+      gap: 15px;
+      margin: 6px;
 
       .img-wrap {
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
 
         img {
-          width: 40px;
+          width: 45px;
         }
 
         p {
@@ -278,6 +284,7 @@ const Container = styled.div`
           font-size: 9px;
           font-weight: 700;
           width: 100%;
+          text-align: center;
         }
       }
     }

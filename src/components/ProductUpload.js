@@ -17,14 +17,14 @@ const ProductUpload = () => {
       <section className="overflow-x-scroll">
         <section className="img-upload">
           <div className="upload-btn">
-            <label for="file">
+            <label htmlFor="file">
               <img src={camera} alt="camera-icon" />
               <p>0/10</p>
             </label>
             <input type="file" id="file" hidden />
           </div>
           {pictures.map((el, i) => (
-            <div className="img-holder">
+            <div key={i} className="img-holder">
               {el && <img key={i} src={el} alt={`upload-${i}`} />}
             </div>
           ))}
@@ -37,7 +37,7 @@ const ProductUpload = () => {
         <div className="price-wrap">
           <input type="text" placeholder="₩ 가격" />
           <div className="inner-wrap">
-            <label for="checkbox">배송비포함</label>
+            <label htmlFor="checkbox">배송비포함</label>
             <input type="checkbox" id="checkbox" />
           </div>
         </div>

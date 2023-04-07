@@ -1,29 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import banner_1 from "../img/banner-1.png";
-import banner_2 from "../img/banner-2.png";
+import banner_6 from "../img/banner-6.png";
+import banner_5 from "../img/banner-5.png";
 import next_btn from "../img/next-btn.png";
 import line from "../img/line.png";
-const Banner = () => {
+const Banner_1 = () => {
   return (
     <Container>
-      <img src={banner_1} alt="banner" />
+      <img src={banner_5} alt="banner" />
       <div className="sub-content">
-        <p>어린시절, 골목을 함께 뛰놀았던 나만의 영웅들</p>
-        <img className="next-btn" src={next_btn} alt="" />
+        {/* <button className="next-btn">Hellow</button> */}
       </div>
     </Container>
   );
 };
 
-export default Banner;
+export default Banner_1;
 
 const Container = styled.section`
   display: flex;
   position: relative;
 
   img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
   }
 
@@ -38,7 +37,6 @@ const Container = styled.section`
     margin-bottom: 50px;
 
     .next-btn {
-      width: 55px;
     }
 
     p {

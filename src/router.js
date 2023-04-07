@@ -4,7 +4,8 @@ import Webtoon from "./components/Webtoon";
 import ComicBook from "./components/ComicBook";
 import Login from "./components/Login";
 import ProductUpload from "./components/ProductUpload";
-import Banner from "./components/Banner";
+import Banner_1 from "./components/Banner_1";
+import Banner_2 from "./components/Banner_2";
 
 export const router = [
   {
@@ -39,7 +40,12 @@ export const router = [
   },
   {
     route: "Banners",
-    path: "/banners",
-    element: <Banner />,
+    path: "/banner_1",
+    element: <Banner_1 />,
+  },
+  {
+    route: "Banners",
+    path: "/banner_2",
+    element: <Banner_2 />,
   },
 ];
