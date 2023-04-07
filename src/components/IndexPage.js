@@ -15,7 +15,8 @@ const IndexPage = () => {
       <Link to="/comicbook/1">8. Comicbook</Link>
       <Link to="/login">9. Login</Link>
       <Link to="/product_upload">10. Product upload</Link>
-      <Link to="/banners">11. Banners</Link>
+      <Link to="/banner_1">11. Banner 1</Link>
+      <Link to="/banner_2">12. Banner 2</Link>
     </Container>
   );
 };
