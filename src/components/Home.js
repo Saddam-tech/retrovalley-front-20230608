@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import BottomNavigation from "@mui/material/BottomNavigation";
@@ -8,10 +8,31 @@ import ChatIcon from "@mui/icons-material/Chat";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import styled from "styled-components";
-import { Outlet, Link } from "react-router-dom";
-
+import { Outlet, useNavigate } from "react-router-dom";
 const Home = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+  const navigate = useNavigate();
+
+  function handleChangeEvent(_value) {
+    switch (_value) {
+      case 0:
+        navigate("/home/main");
+        break;
+      case 1:
+        navigate("/home/products");
+        break;
+      case 2:
+        navigate("/product_upload");
+        break;
+      case 3:
+        navigate("/home/nomatch");
+        break;
+      case 4:
+        navigate("/home/menu");
+        break;
+      default:
+    }
+  }
   return (
     <Container>
       <Outlet />
@@ -33,8 +54,9 @@ const Home = () => {
             height: 85,
           }}
           value={value}
-          onChange={(event, newValue) => {
+          onChange={(_, newValue) => {
             setValue(newValue);
+            handleChangeEvent(newValue);
           }}
         >
           <BottomNavigationAction label="Home" icon={<HomeIcon />} />

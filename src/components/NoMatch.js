@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import logo_main from "../img/main/logo-main.png";
+import { useNavigate } from "react-router-dom";
 
 const NoMatch = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="header">
         <div className="inner-wrap">
-          <ArrowBackIosIcon />
+          <ArrowBackIosIcon onClick={() => navigate(-1)} />
           <h1>뒤로</h1>
         </div>
       </div>

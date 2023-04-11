@@ -4,14 +4,16 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import camera from "../img/camera.png";
 import mana_pay from "../img/mana_pay.png";
 import checked from "../img/checked.svg";
+import { useNavigate } from "react-router-dom";
 
 const ProductUpload = () => {
   const [pictures, setPicture] = useState(new Array(9).fill(""));
+  const navigate = useNavigate();
 
   return (
     <Container>
       <section className="top-bar">
-        <ArrowBackIosIcon />
+        <ArrowBackIosIcon onClick={() => navigate(-1)} />
         <h1>상품등록</h1>
       </section>
       <section className="overflow-x-scroll">
