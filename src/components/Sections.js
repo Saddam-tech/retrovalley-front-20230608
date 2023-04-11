@@ -11,7 +11,7 @@ const Sections = ({ arr }) => {
             {el.icons.map((icon, j) => {
               return (
                 <div key={j} className="icon-wrap">
-                  {icon.component}
+                  <img src={icon.url} alt="" />
                   <p>{icon.name}</p>
                 </div>
               );
@@ -36,7 +36,9 @@ const Container = styled.section`
     padding: 0;
 
     h3 {
-      font-size: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 5px 0;
     }
 
     article {
@@ -47,12 +49,19 @@ const Container = styled.section`
       width: 100%;
       gap: 21px;
 
+      img {
+        width: 39px;
+        height: 24px;
+      }
+
       .icon-wrap {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         font-size: 10px;
+        padding: 10px 0;
+        gap: 5px;
 
         p {
           margin: 0;
