@@ -7,14 +7,16 @@ import Product from "./Product";
 import { products } from "../../data/products";
 import { filterVal } from "../../data/filterVal";
 import FilterDropdown from "./FilterDropdown";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [dropdown, setDropdown] = useState(false);
+  const navigate = useNavigate();
   return (
     <Container switch={dropdown}>
       <div className="header">
         <div className="inner-wrap">
-          <ArrowBackIosIcon />
+          <ArrowBackIosIcon onClick={() => navigate(-1)} />
           <h1>단행본</h1>
           <p>924,251 소장품</p>
           <ShoppingCartTwoToneIcon />
