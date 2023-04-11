@@ -26,11 +26,11 @@ const Login = () => {
       <section className="check-box-holder">
         <div className="check-box-wrap">
           <input type="checkbox" id="checkbox-1" />
-          <label for="checkbox-1">자동로그인</label>
+          <label htmlFor="checkbox-1">자동로그인</label>
         </div>
         <div className="check-box-wrap">
           <input type="checkbox" id="checkbox-2" />
-          <label for="checkbox-2">아이디저장</label>
+          <label htmlFor="checkbox-2">아이디저장</label>
         </div>
       </section>
       <section className="btn-holder">

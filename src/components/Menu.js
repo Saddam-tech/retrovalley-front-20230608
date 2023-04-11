@@ -208,10 +208,6 @@ const Menu = () => {
           <Sections arr={section_6} />
         </section>
         <section>
-          <Sections arr={section_5} />
-          <Sections arr={section_5} />
-        </section>
-        <section>
           <Sections arr={section_7} />
         </section>
         <section>

@@ -6,6 +6,7 @@ import Main from "./components/Market/Main";
 import Menu from "./components/Menu";
 import Products from "./components/Products/Products";
 import { router } from "./router";
+import NoMatch from "./components/NoMatch";
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
               }
             />
             <Route path="products" element={<Products />} />
+            <Route path="nomatch" element={<NoMatch />} />
           </Route>
           {router.map((el, i) => (
             <Route key={i} path={el.path} element={el.element} />
