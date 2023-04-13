@@ -39,13 +39,8 @@ export const router = [
     element: <ProductUpload />,
   },
   {
-    route: "Banners",
-    path: "/banner_1",
-    element: <Banner_1 />,
-  },
-  {
-    route: "Banners",
-    path: "/banner_2",
+    route: "Banner",
+    path: "/start",
     element: <Banner_2 />,
   },
 ];

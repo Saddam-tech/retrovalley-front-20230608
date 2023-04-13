@@ -19,7 +19,11 @@ const Category = ({ pageName, main, sub }) => {
       </div>
       <section className="sub-content">
         {main.map((el, i) => (
-          <div key={i} className="block">
+          <div
+            onClick={() => navigate("/home/comics")}
+            key={i}
+            className="block"
+          >
             <h3>{el}</h3>
             <ArrowForwardIosTwoToneIcon
               sx={{ fontSize: "13px", opacity: "0.50" }}

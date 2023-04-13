@@ -10,7 +10,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import styled from "styled-components";
 import { Outlet, useNavigate } from "react-router-dom";
 const Home = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("");
   const navigate = useNavigate();
 
   function handleChangeEvent(_value) {

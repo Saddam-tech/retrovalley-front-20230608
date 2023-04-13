@@ -18,6 +18,7 @@ import movie_figure_icon from "../../img/movie-figure.svg";
 import profile_1 from "../../img/profile_1.png";
 import check_orange from "../../img/checked.svg";
 import AnimatedCarousel from "../Carousel/AnimatedCarousel";
+import { useNavigate } from "react-router-dom";
 
 const images = [banner_7, banner_8, banner_1, banner_2, banner_3];
 
@@ -37,6 +38,7 @@ const categories = [
   "Apple 아이맥 5K",
 ];
 const Main = () => {
+  const navigate = useNavigate();
   const [isTransparent, setIsTransparent] = React.useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState(0);
@@ -61,6 +63,7 @@ const Main = () => {
       <div className="header">
         <div className="inner-wrap">
           <MenuTwoToneIcon
+            onClick={() => navigate("/home/category")}
             sx={{ color: !isTransparent ? "000000" : "#65bc7b", fontSize: 35 }}
           />
           <img

@@ -7,6 +7,7 @@ import Menu from "./components/Menu";
 import Products from "./components/Products/Products";
 import { router } from "./router";
 import NoMatch from "./components/NoMatch";
+import Banner_1 from "./components/Banner_1";
 
 export default function App() {
   return (
@@ -31,7 +32,7 @@ export default function App() {
       />
       <HashRouter>
         <Routes>
-          <Route path="/" element={<IndexPage />} />
+          <Route path="/" element={<Banner_1 />} />
           <Route exact path="/home" element={<Home />}>
             <Route path="main" element={<Main />} />
             <Route path="menu" element={<Menu />} />
@@ -58,6 +59,7 @@ export default function App() {
             <Route path="products" element={<Products />} />
             <Route path="nomatch" element={<NoMatch />} />
           </Route>
+          <Route path="/index" element={<IndexPage />} />
           {router.map((el, i) => (
             <Route key={i} path={el.path} element={el.element} />
           ))}

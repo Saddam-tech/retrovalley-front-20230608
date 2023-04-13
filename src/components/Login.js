@@ -7,8 +7,10 @@ import google_social from "../img/google-social.png";
 import naver_social from "../img/naver-social.png";
 import kakaotalk_social from "../img/kakaotalk-social.png";
 import apple_social from "../img/apple-social.png";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <section className="top-bar">
@@ -34,7 +36,7 @@ const Login = () => {
         </div>
       </section>
       <section className="btn-holder">
-        <button>로그인</button>
+        <button onClick={() => navigate("/home/main")}>로그인</button>
         <div className="button-div"></div>
       </section>
       <h2>간편 로그인</h2>

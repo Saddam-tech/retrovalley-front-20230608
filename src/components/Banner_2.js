@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import banner_6 from "../img/banner-6.png";
-import banner_5 from "../img/banner-5.png";
+
 import next_btn from "../img/next-btn.png";
 import line from "../img/line.png";
+import { useNavigate } from "react-router-dom";
 const Banner_2 = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <img src={banner_6} alt="banner" />
-      <div className="sub-content">
-        {/* <button className="next-btn">Hellow</button> */}
-      </div>
+      <button onClick={() => navigate("/login")} className="next-btn">
+        Start
+      </button>
     </Container>
   );
 };
@@ -20,29 +22,25 @@ export default Banner_2;
 const Container = styled.section`
   display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
 
   img {
     object-fit: cover;
     width: 100%;
   }
 
-  .sub-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+  .next-btn {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 50px;
-
-    .next-btn {
-    }
-
-    p {
-      font-size: 13px;
-      color: #ffffff;
-    }
+    bottom: 60px;
+    width: 85%;
+    background-color: #ffc600;
+    color: #000000;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
   }
   .line {
     width: 100%;
