@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import Sections from "./Sections";
 import MovieFigureIcon from "../Icons/MovieFigureIcon";
@@ -180,6 +181,7 @@ const section_9 = [
 ];
 
 const Menu = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="header">
@@ -188,7 +190,7 @@ const Menu = () => {
           <h1>전체메뉴</h1>
         </div>
 
-        <CloseIcon sx={{ color: "#999999" }} />
+        <CloseIcon onClick={() => navigate(-1)} sx={{ color: "#999999" }} />
       </div>
 
       <div className="section-wrapper-div">
