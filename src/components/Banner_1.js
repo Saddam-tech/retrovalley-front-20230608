@@ -24,7 +24,7 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   img {
-    object-fit: cover;
+    /* object-fit: cover; */
     width: 100%;
     height: 100vh;
   }
