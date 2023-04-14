@@ -7,6 +7,20 @@ import { useNavigate } from "react-router-dom";
 
 const Category = ({ pageName, main, sub }) => {
   const navigate = useNavigate();
+  const MAP_PATH_TO_STRING = {
+    단행본: true,
+    연재본: true,
+  };
+
+  function handleClick(params) {
+    let { name, path } = params;
+    const encodedString = MAP_PATH_TO_STRING[name] && encodeURIComponent(name);
+    if (MAP_PATH_TO_STRING[name]) {
+      navigate(`${path}?string=${encodedString}`);
+    } else {
+      navigate(path);
+    }
+  }
   return (
     <Container>
       <div className="header">
@@ -19,12 +33,8 @@ const Category = ({ pageName, main, sub }) => {
       </div>
       <section className="sub-content">
         {main.map((el, i) => (
-          <div
-            onClick={() => navigate("/home/comics")}
-            key={i}
-            className="block"
-          >
-            <h3>{el}</h3>
+          <div onClick={() => handleClick(el)} key={i} className="block">
+            <h3>{el.name}</h3>
             <ArrowForwardIosTwoToneIcon
               sx={{ fontSize: "13px", opacity: "0.50" }}
             />

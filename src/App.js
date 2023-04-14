@@ -41,7 +41,24 @@ export default function App() {
               element={
                 <Category
                   pageName="카테고리"
-                  main={["만화책", "장난감", "SHOP", "E-BOOK"]}
+                  main={[
+                    {
+                      name: "만화책",
+                      path: "/home/comics",
+                    },
+                    {
+                      name: "장난감",
+                      path: "/home/products",
+                    },
+                    {
+                      name: "SHOP",
+                      path: "/comicbook/1",
+                    },
+                    {
+                      name: "E-BOOK",
+                      path: "/webtoon",
+                    },
+                  ]}
                   sub={["작가", "년도", "브랜드", "국가", "설정"]}
                 />
               }
@@ -51,7 +68,20 @@ export default function App() {
               element={
                 <Category
                   pageName="만화책"
-                  main={["전체", "단행본", "연재본"]}
+                  main={[
+                    {
+                      name: "전체",
+                      path: "/home/menu",
+                    },
+                    {
+                      name: "단행본",
+                      path: "/home/products",
+                    },
+                    {
+                      name: "연재본",
+                      path: "/home/products",
+                    },
+                  ]}
                   sub={[]}
                 />
               }
