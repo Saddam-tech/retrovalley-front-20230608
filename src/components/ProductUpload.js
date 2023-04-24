@@ -67,7 +67,7 @@ const ProductUpload = () => {
             <p>마나페이</p>
             <img className="tick" src={checked} alt="checkbox" />
           </div>
-          <button>등록</button>
+          <button onClick={navigate("/home/nomatch")}>등록</button>
         </div>
         <p className="ending-p">
           등록된 상품에 안전결재 알약 배지가 표시되요. <span>자세히</span>

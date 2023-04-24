@@ -28,7 +28,7 @@ const Home = () => {
         navigate("/home/nomatch");
         break;
       case 4:
-        navigate("/home/menu");
+        navigate("/home/nomatch");
         break;
       default:
     }

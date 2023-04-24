@@ -18,7 +18,7 @@ const Item = ({
       img_height={img_height}
       onClick={() =>
         navigate(
-          alternative !== "undefined"
+          alternative !== false
             ? `/readcontent/${alternative}`
             : `/products/product/${id}`
         )

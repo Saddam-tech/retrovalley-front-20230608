@@ -154,6 +154,7 @@ const Main = () => {
                 price={el.price}
                 description={el.description}
                 img_src={require(`../../img/product_img/${el.img_src}.png`)}
+                alternative={false}
               />
             ))}
           </section>
@@ -314,6 +315,7 @@ const Main = () => {
                         price={el.price}
                         description={el.description}
                         img_src={require(`../../img/saleitem-${i}.png`)}
+                        alternative={false}
                       />
                     ))}
                   </div>
