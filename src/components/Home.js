@@ -19,7 +19,7 @@ const Home = () => {
         navigate("/home/main");
         break;
       case 1:
-        navigate("/home/products");
+        navigate("/home/menu");
         break;
       case 2:
         navigate("/product_upload");
