@@ -11,6 +11,9 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const handleNav = () => {
+    navigate("/home/nomatch");
+  };
   return (
     <Container>
       <section className="top-bar">
@@ -41,31 +44,31 @@ const Login = () => {
       </section>
       <h2>간편 로그인</h2>
       <section className="social-login-box">
-        <div>
+        <div onClick={handleNav}>
           <img src={naver_social} alt="social-login" />
           <p>네이버 로그인</p>
         </div>
-        <div>
+        <div onClick={handleNav}>
           <img src={google_social} alt="social-login" />
           <p>구글 로그인</p>
         </div>
       </section>
       <section className="social-login-box">
-        <div>
+        <div onClick={handleNav}>
           <img src={apple_social} alt="social-login" />
           <p>애플 로그인</p>
         </div>
-        <div>
+        <div onClick={handleNav}>
           <img src={kakaotalk_social} alt="social-login" />
           <p>카카오톡 로그인</p>
         </div>
       </section>
-      <p className="pre-footer">
+      <p onClick={handleNav} className="pre-footer">
         계정을 잊으셨나요? <span>ID찾기</span> 또는 <span>비밀번호 찾기</span>
       </p>
 
       <p className="footer">
-        아직 회원이 아니신가요? <span>회원가입 {">"} </span>
+        아직 회원이 아니신가요? <span onClick={handleNav}>회원가입 {">"} </span>
       </p>
     </Container>
   );

@@ -387,11 +387,9 @@ const Container = styled.div`
         .img-container {
           position: relative;
           overflow: hidden;
-          background-color: rgba(0, 0, 0, 0.2);
-          border-radius: 50%;
+          background-color: transparent;
           .backgroundC {
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.2);
             display: flex;
             width: 100%;
             height: 100%;
@@ -402,10 +400,14 @@ const Container = styled.div`
               text-align: center;
               color: #ffffff;
               font-weight: 900;
-              font-size: 10px;
+              font-family: "Cooper Std";
+              font-size: 9px;
+              margin: 0;
             }
           }
           img {
+            border-radius: 50%;
+            filter: brightness(0.8);
             width: 45px;
           }
         }

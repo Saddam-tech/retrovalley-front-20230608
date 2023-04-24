@@ -154,6 +154,7 @@ const section_8 = [
       {
         name: "고전 ebook",
         url: category_17,
+        path: "/readcontent/1",
       },
     ],
   },
