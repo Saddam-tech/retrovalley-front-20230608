@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Sections = ({ arr }) => {
+  const navigate = useNavigate();
   return (
     <Container>
       {arr.map((el, i) => (
@@ -10,7 +12,11 @@ const Sections = ({ arr }) => {
           <article>
             {el.icons.map((icon, j) => {
               return (
-                <div key={j} className="icon-wrap">
+                <div
+                  onClick={() => (icon?.path ? navigate(icon?.path) : "")}
+                  key={j}
+                  className="icon-wrap"
+                >
                   <img src={icon.url} alt="" />
                   <p>{icon.name}</p>
                 </div>

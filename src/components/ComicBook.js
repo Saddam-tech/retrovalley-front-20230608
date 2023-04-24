@@ -14,10 +14,12 @@ const ComicBook = () => {
 
   const map_id_to_content = {
     0: {
+      title: "비뢰도",
       banner: "ads",
       book: "srthsre",
     },
     1: {
+      title: "1Q84",
       banner: "comicbook-1-banner",
       book: "comicbook-1-book",
     },
@@ -45,7 +47,7 @@ const ComicBook = () => {
       </div>
 
       <section className="block">
-        <h1>비뢰도 1화</h1>
+        <h1>{map_id_to_content[id].title}</h1>
         <section className="book-content">
           <img
             src={require(`../img/${map_id_to_content[id].book}.png`)}
