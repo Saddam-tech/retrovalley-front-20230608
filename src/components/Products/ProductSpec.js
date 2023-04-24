@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import retro_toy from "../../img/retro_toy.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import profile_img from "../../img/profile_img.png";
 import mana_pay from "../../img/mana_pay.png";
@@ -9,11 +11,30 @@ import like_btn from "../../img/like-btn.png";
 import like_btn_red from "../../img/like-btn-red.png";
 import watermark from "../../img/watermark.png";
 import mana from "../../img/mana.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const ProductSpec = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const map_path_to_img = {
+    0: ["toy-1", "toy-2", "toy-3", "toy-4", "toy-5"],
+    1: ["car-1", "car-2", "car-3", "car-4", "car-5"],
+    2: ["ranger-1", "ranger-2", "ranger-3", "ranger-4", "ranger-5"],
+    3: ["ranger-6", "ranger-7", "ranger-8", "ranger-9", "ranger-10"],
+    4: ["antman-1", "antman-2", "antman-3", "antman-4", "antman-5"],
+    5: ["boy-1", "boy-2", "boy-3", "boy-4", "boy-5"],
+  };
+
+  const handleNext = (images) => {
+    setActiveIndex(activeIndex === images.length - 1 ? 0 : activeIndex + 1);
+  };
+
+  const handlePrev = (images) => {
+    setActiveIndex(activeIndex === 0 ? images.length - 1 : activeIndex - 1);
+  };
   return (
-    <Container>
+    <Container images={map_path_to_img[id]} activeIndex={activeIndex}>
       <div className="header">
         <div className="inner-wrap">
           <ArrowBackIosIcon onClick={() => navigate(-1)} />
@@ -22,13 +43,34 @@ const ProductSpec = () => {
         <ShoppingCartTwoToneIcon />
       </div>
       <div className="img-holder">
-        <img className="product-image" src={retro_toy} alt="retro-toy" />
+        <div className="img-map">
+          {map_path_to_img[id].map((el, id) => (
+            <img
+              key={id}
+              className="product-image"
+              src={require(`../../img/product_img/${el}.png`)}
+              alt="retro-toy"
+            />
+          ))}
+        </div>
+        <NavigateBeforeIcon
+          className="prev"
+          onClick={() => handlePrev(map_path_to_img[id])}
+        >
+          Prev
+        </NavigateBeforeIcon>
+        <NavigateNextIcon
+          className="next"
+          onClick={() => handleNext(map_path_to_img[id])}
+        >
+          Next
+        </NavigateNextIcon>
         <div className="tab-1">
           <img className="watermark" src={watermark} alt="watermark" />
           <img className="like-btn-red" src={like_btn_red} alt="like_btn_red" />
         </div>
         <div className="tab-2">
-          <p>1/5</p>
+          <p>{activeIndex + 1 + "/" + map_path_to_img[id].length}</p>
         </div>
         <div className="tab-3">
           <img src={mana_pay} alt="mana-pay" />
@@ -123,10 +165,31 @@ const Container = styled.section`
   .img-holder {
     position: relative;
     width: 100%;
-    .product-image {
-      width: 100vw;
-      max-height: 330px;
-      object-fit: cover;
+    .img-map {
+      display: flex;
+      overflow-y: scroll;
+
+      .product-image {
+        width: 100vw;
+        max-height: 430px;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(
+          -${(props) => props.activeIndex * (500 / props.images.length)}%
+        );
+      }
+    }
+    .next {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      color: #999999;
+    }
+    .prev {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      color: #999999;
     }
     .tab-1 {
       position: absolute;

@@ -65,25 +65,31 @@ export const items = [
   {
     price: "143,000원",
     description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    img_src: "toy-1",
   },
   {
     price: "143,000원",
     description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    img_src: "car-1",
   },
   {
     price: "143,000원",
     description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    img_src: "ranger-1",
   },
   {
     price: "143,000원",
     description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    img_src: "ranger-6",
   },
   {
     price: "143,000원",
     description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    img_src: "antman-1",
   },
   {
     price: "143,000원",
     description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    img_src: "boy-1",
   },
 ];

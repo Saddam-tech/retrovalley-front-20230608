@@ -118,7 +118,7 @@ const Main = () => {
                 img_height="175px"
                 price={el.price}
                 description={el.description}
-                img_src={require(`../../img/ranger-${i}.png`)}
+                img_src={require(`../../img/product_img/${el.img_src}.png`)}
               />
             ))}
           </section>

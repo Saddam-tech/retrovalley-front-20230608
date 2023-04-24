@@ -31,6 +31,7 @@ const Container = styled.section`
   img {
     width: ${(props) => props.img_width};
     height: ${(props) => props.img_height};
+    border-radius: 10px;
   }
 
   .title {
