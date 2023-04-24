@@ -6,35 +6,37 @@ import mana_pay from "../img/mana_pay.png";
 import like_btn from "../img/like-btn.png";
 import ads from "../img/ads.png";
 import srthsre from "../img/srthsre.png";
-import { useNavigate } from "react-router-dom";
-const blocks = [
-  "웹툰",
-  "웹소설",
-  "보물섬",
-  "태권브이",
-  "마블코믹",
-  "마블코믹",
-  "태권브이",
-  "마블코믹",
-  "마블코믹",
-  "마블코믹",
-  "태권브이",
-  "마블코믹",
-  "마블코믹",
-];
+import { useNavigate, useParams } from "react-router-dom";
+
 const ComicBook = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  const map_id_to_content = {
+    0: {
+      banner: "ads",
+      book: "srthsre",
+    },
+    1: {
+      banner: "comicbook-1-banner",
+      book: "comicbook-1-book",
+    },
+  };
   return (
     <Container>
       <div className="header">
-        <div className="inner-wrap">
-          <ArrowBackIosIcon onClick={() => navigate(-1)} />
-          <h1>레트로토이</h1>
-        </div>
-        <ShoppingCartTwoToneIcon />
+        <ArrowBackIosIcon
+          sx={{ color: "#999999" }}
+          onClick={() => navigate(-1)}
+        />
+        <img width="16px" src={require("../img/stats.png")} alt="stats" />
       </div>
 
-      <img className="product-image" src={ads} alt="retro-toy" />
+      <img
+        className="product-image"
+        src={require(`../img/${map_id_to_content[id].banner}.png`)}
+        alt="retro-toy"
+      />
       <div className="img-holder">
         <div className="tab-3">
           <img src={mana_pay} alt="mana-pay" />
@@ -45,7 +47,10 @@ const ComicBook = () => {
       <section className="block">
         <h1>비뢰도 1화</h1>
         <section className="book-content">
-          <img src={srthsre} alt="comic-book" />
+          <img
+            src={require(`../img/${map_id_to_content[id].book}.png`)}
+            alt="comic-book"
+          />
         </section>
       </section>
 
@@ -69,21 +74,10 @@ const Container = styled.section`
   .header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    gap: 120px;
-
-    .inner-wrap {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-
-      h1 {
-        font-size: 24px;
-        font-weight: 400;
-        color: #191919;
-      }
-    }
+    justify-content: space-between;
+    margin: 5px 35px;
+    height: 50px;
+    margin-top: 30px;
   }
   .img-holder {
     position: relative;

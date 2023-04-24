@@ -10,21 +10,42 @@ import webtoon from "../img/webtoon.png";
 import watermark from "../img/watermark.png";
 import check_gray from "../img/check-gray.png";
 import check_orange from "../img/check-orange.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const blocks = ["첫화보기", "정주행", "최신화", "최신화", "북마크"];
-const Webtoon = () => {
+const ReadContent = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
+  const map_id_to_content = {
+    0: {
+      page: "웹툰",
+      title: "비뢰도",
+      description: "작가 오주,Awin, 검류혼  |  총편수 총 152화",
+      category: "비뢰도",
+      img: "webtoon",
+    },
+    1: {
+      page: "웹소설",
+      title: "1Q84",
+      description: "작가 무라카미 하루키,  |  총편수 총 256화",
+      category: "1Q84",
+      img: "comicbook-1",
+    },
+  };
   return (
     <Container>
       <div className="header">
         <div className="inner-wrap">
           <ArrowBackIosIcon onClick={() => navigate(-1)} />
-          <h1>레트로토이</h1>
+          <h1>{map_id_to_content[id].page}</h1>
         </div>
-        <ShoppingCartTwoToneIcon />
+        <img width="16px" src={require("../img/stats.png")} alt="stats" />
       </div>
       <div className="img-holder">
-        <img className="product-image" src={webtoon} alt="retro-toy" />
+        <img
+          className="product-image"
+          src={require(`../img/${map_id_to_content[id].img}.png`)}
+          alt="retro-toy"
+        />
         <div className="tab-1">
           <img className="watermark" src={watermark} alt="watermark" />
           <img className="like-btn-red" src={like_btn_red} alt="like_btn_red" />
@@ -39,8 +60,8 @@ const Webtoon = () => {
       </div>
 
       <section className="sub-section">
-        <h1>비뢰도</h1>
-        <p>작가 오주,Awin, 검류혼 | 총편수 총 152화</p>
+        <h1>{map_id_to_content[id].title}</h1>
+        <p>{map_id_to_content[id].description}</p>
         <p>
           홀로 길러주신 아버지를 돌림병으로 잃고 10세의 어린 나이에 혈혈단신이
           된 비류연. 조각사였던 아버지에게 배운 기술로 부모님의 조각상을 만들어
@@ -50,7 +71,11 @@ const Webtoon = () => {
         </p>
         <div className="blocks">
           {blocks.map((el, i) => (
-            <div className={i === 0 ? "color-orange" : ""} key={i}>
+            <div
+              className={i === 0 ? "color-orange" : ""}
+              onClick={() => (i === 0 ? navigate(`/comicbook/${id}`) : "")}
+              key={i}
+            >
               {i === 3 && <img src={like_btn_red} alt="icons" />}
               {i === 4 && <img src={bookmark} alt="icons" />}
               <p>{el}</p>
@@ -60,69 +85,20 @@ const Webtoon = () => {
       </section>
 
       <section className="sub-section-1">
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_orange} alt="tick" />
-            <h1>비뢰도 1화</h1>
+        {new Array(7).fill("*").map((_, i) => (
+          <div key={i} className="row">
+            <div className="wrap-1">
+              <img src={check_orange} alt="tick" />
+              <h1>
+                {map_id_to_content[id].title}
+                {i + 1}화
+              </h1>
+            </div>
+            <button className={i > 2 ? "low-padding" : ""}>
+              {i > 2 ? "10 마나" : "무료"}
+            </button>
           </div>
-          <button>무료</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button>무료</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button>무료</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button className="low-padding">10 마나</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button className="low-padding">10 마나</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button className="low-padding">10 마나</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button className="low-padding">10 마나</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button className="low-padding">10 마나</button>
-        </div>
-        <div className="row">
-          <div className="wrap-1">
-            <img src={check_gray} alt="tick" />
-            <h1>비뢰도 1화</h1>
-          </div>
-          <button className="low-padding">10 마나</button>
-        </div>
+        ))}
       </section>
 
       <section className="bottom-bar">
@@ -136,7 +112,7 @@ const Webtoon = () => {
   );
 };
 
-export default Webtoon;
+export default ReadContent;
 
 const Container = styled.section`
   display: flex;

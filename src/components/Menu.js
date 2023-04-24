@@ -144,6 +144,7 @@ const section_8 = [
       {
         name: "웹툰",
         url: category_15,
+        path: "/webtoon",
       },
       {
         name: "웹소설",
@@ -190,7 +191,10 @@ const Menu = () => {
           <h1>전체메뉴</h1>
         </div>
 
-        <CloseIcon onClick={() => navigate(-1)} sx={{ color: "#999999" }} />
+        <CloseIcon
+          onClick={() => navigate("/home/main")}
+          sx={{ color: "#999999" }}
+        />
       </div>
 
       <div className="section-wrapper-div">

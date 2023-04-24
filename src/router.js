@@ -1,6 +1,6 @@
 import Home from "./components/Home";
 import ProductSpec from "./components/Products/ProductSpec";
-import Webtoon from "./components/Webtoon";
+import ReadContent from "./components/ReadContent";
 import ComicBook from "./components/ComicBook";
 import Login from "./components/Login";
 import ProductUpload from "./components/ProductUpload";
@@ -24,9 +24,9 @@ export const router = [
     element: <ProductSpec />,
   },
   {
-    route: "Webtoon",
-    path: "/webtoon",
-    element: <Webtoon />,
+    route: "ReadContent",
+    path: "/readcontent/:id",
+    element: <ReadContent />,
   },
   {
     route: "ComicBook",
