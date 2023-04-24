@@ -4,7 +4,6 @@ import ReadContent from "./components/ReadContent";
 import ComicBook from "./components/ComicBook";
 import Login from "./components/Login";
 import ProductUpload from "./components/ProductUpload";
-import Banner_1 from "./components/Banner_1";
 import Banner_2 from "./components/Banner_2";
 
 export const router = [

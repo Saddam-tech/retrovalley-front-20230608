@@ -2,13 +2,27 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-const Item = ({ id, price, description, img_src, img_width, img_height }) => {
+const Item = ({
+  id,
+  price,
+  description,
+  img_src,
+  img_width,
+  img_height,
+  alternative,
+}) => {
   const navigate = useNavigate();
   return (
     <Container
       img_width={img_width}
       img_height={img_height}
-      onClick={() => navigate(`/products/product/${id}`)}
+      onClick={() =>
+        navigate(
+          alternative !== "undefined"
+            ? `/readcontent/${alternative}`
+            : `/products/product/${id}`
+        )
+      }
     >
       <img src={img_src} alt="nft-sample" />
       <div className="title">

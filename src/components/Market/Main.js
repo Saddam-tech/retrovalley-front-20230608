@@ -8,7 +8,7 @@ import logo_65bc7b from "../../img/main/logo-65bc7b.png";
 import logo_ffffff from "../../img/main/logo-ffffff.png";
 import Item from "./Item";
 import Carousel from "../Carousel/Carousel";
-import { items } from "../../data/products";
+import { items, items_1 } from "../../data/products";
 import banner_1 from "../../img/banners/banner-1.png";
 import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
@@ -147,6 +147,75 @@ const Main = () => {
                 description={el.description}
                 img_src={require(`../../img/product_img/${el.img_src}.png`)}
               />
+            ))}
+          </section>
+          <section className="titles-1">
+            <h1>고전만화, 소설..</h1>
+            <p>아직도 모르는건 아싸~!!</p>
+          </section>
+
+          <section className="search-bar">
+            <div className="search-content">
+              <SearchIcon sx={{ color: "#999999" }} />
+              <input type="text" placeholder="만화와 소설을 검색해보세요" />
+            </div>
+          </section>
+
+          <section className="slider-bar">
+            <section className="tape">
+              {categories.map((el, i) => (
+                <p
+                  onClick={() => setActiveCategory(i)}
+                  className={activeCategory === i ? "active" : ""}
+                  key={i}
+                >
+                  {el}
+                </p>
+              ))}
+            </section>
+          </section>
+          <section className="filters">
+            <div className="more-wrap">
+              <p>더보기</p>
+              <KeyboardArrowDownIcon sx={{ color: "#999999" }} />
+            </div>
+            <div className="more-wrap right-side">
+              <p>나의 팔로잉</p>
+              <img src={check_orange} alt="checkbox" />
+            </div>
+          </section>
+          <section className="sale-section-wrapper">
+            {new Array(2).fill("*").map((el, i) => (
+              <section key={i} className="sale-section">
+                <div className="header-title">
+                  <div className="wrap-1">
+                    <img src={movie_figure_icon} alt="movie-figure-icon" />
+                    <div className="wrap-2">
+                      <h1>{["고전 만화", "고전 소설"][i]}</h1>
+                      <p>Nike. 154,981개</p>
+                    </div>
+                  </div>
+                  <button>팔로우</button>
+                </div>
+                <section className="slide-items">
+                  <div className="tape">
+                    {items_1.map((el, _i) => (
+                      <Item
+                        key={_i}
+                        img_width="130px"
+                        img_height="130px"
+                        id={_i}
+                        price={el.price}
+                        description={el.description}
+                        img_src={require(`../../img/tobesold-${
+                          i === 0 ? "" : "2-"
+                        }${_i}.png`)}
+                        alternative={i}
+                      />
+                    ))}
+                  </div>
+                </section>
+              </section>
             ))}
           </section>
         </>
@@ -397,7 +466,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-around;
     padding: 0 10px;
-    margin-bottom: 120px;
+    /* margin-bottom: 120px; */
     flex-wrap: wrap;
     overflow-x: scroll;
   }
@@ -459,13 +528,34 @@ const Container = styled.div`
       color: #999999;
     }
   }
+  .titles-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 90%;
+
+    h1 {
+      font-size: 39px;
+      font-weight: 500;
+      margin: 10px 0 0 12px;
+      color: #313744;
+    }
+
+    p {
+      font-size: 27px;
+      text-align: center;
+      margin: 12px;
+      line-height: 24px;
+      color: #313744;
+    }
+  }
   .titles-2 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     max-width: 240px;
-    /* margin-bottom: 120px; */
 
     h1 {
       font-size: 29px;
