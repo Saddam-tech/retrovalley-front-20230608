@@ -73,6 +73,14 @@ const Main = () => {
     }
   };
 
+  const handleNav = (index) => {
+    if (index === 1) {
+      navigate("/home/nomatch");
+    } else {
+      setActiveIndex(index);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -127,7 +135,7 @@ const Main = () => {
             <p
               className={activeIndex === i ? "active" : ""}
               key={i}
-              onClick={() => setActiveIndex(i)}
+              onClick={() => handleNav(i)}
             >
               {el}
             </p>
@@ -221,7 +229,7 @@ const Main = () => {
         </>
       )}
 
-      {activeIndex === 1 && (
+      {activeIndex === 2 && (
         <>
           <section className="events">
             {new Array(5).fill("").map((_, i) => (
