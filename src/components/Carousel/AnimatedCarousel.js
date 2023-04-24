@@ -12,7 +12,7 @@ const CarouselSlider = styled.div`
   display: flex;
   transition: transform 0.5s ease-in-out;
   transform: translateX(
-    -${(props) => props.activeIndex * (500 / props.images.length)}%
+    -${(props) => props.activeIndex * (400 / props.images.length)}%
   );
 `;
 

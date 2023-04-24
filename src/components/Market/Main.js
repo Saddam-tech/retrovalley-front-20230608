@@ -14,6 +14,10 @@ import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
 import banner_7 from "../../img/banners/banner-7.png";
 import banner_8 from "../../img/banners/banner-8.png";
+import banner_9 from "../../img/banners/nike-1.png";
+import banner_10 from "../../img/banners/nike-2.png";
+import banner_11 from "../../img/banners/nike-3.png";
+import banner_12 from "../../img/banners/nike-4.png";
 import movie_figure_icon from "../../img/movie-figure.svg";
 import profile_1 from "../../img/profile_1.png";
 import check_orange from "../../img/checked.svg";
@@ -21,6 +25,7 @@ import AnimatedCarousel from "../Carousel/AnimatedCarousel";
 import { useNavigate } from "react-router-dom";
 
 const images = [banner_7, banner_8, banner_1, banner_2, banner_3];
+const banners = [banner_9, banner_10, banner_11, banner_12];
 
 const links = ["추천상품", "레밸UP", "레밸랭킹"];
 const categories = [
@@ -256,7 +261,7 @@ const Main = () => {
           </section>
           <section className="animated-carousel">
             <AnimatedCarousel
-              images={images}
+              images={banners}
               autoplay={true}
               autoplayDelay={3000}
             />
