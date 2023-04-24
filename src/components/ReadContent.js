@@ -117,6 +117,8 @@ export default ReadContent;
 const Container = styled.section`
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding-bottom: 100px;
 
   .header {
     display: flex;
@@ -301,8 +303,12 @@ const Container = styled.section`
     align-items: center;
     justify-content: space-around;
     gap: 20px;
-    padding: 30px 20px;
+    padding: 20px 0;
+    width: 100%;
     border-top: 1px solid #ededed;
+    background-color: #f7f7f7;
+    position: fixed;
+    bottom: 0;
 
     img {
       width: 20px;

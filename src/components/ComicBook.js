@@ -4,26 +4,38 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import mana_pay from "../img/mana_pay.png";
 import like_btn from "../img/like-btn.png";
-import ads from "../img/ads.png";
-import srthsre from "../img/srthsre.png";
+import next_icon from "../img/next-icon.png";
+import prev_icon from "../img/prev-icon.png";
+import content_icon from "../img/content-icon.png";
 import { useNavigate, useParams } from "react-router-dom";
+const blocks = [
+  "웹툰",
+  "웹소설",
+  "보물섬",
+  "태권브이",
+  "마블코믹",
+  "철인28호",
+  "황금날개",
+  "챔프",
+];
+
+const map_id_to_content = {
+  0: {
+    title: "비뢰도",
+    banner: "ads",
+    book: "srthsre",
+  },
+  1: {
+    title: "1Q84",
+    banner: "comicbook-1-banner",
+    book: "comicbook-1-book",
+  },
+};
 
 const ComicBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const map_id_to_content = {
-    0: {
-      title: "비뢰도",
-      banner: "ads",
-      book: "srthsre",
-    },
-    1: {
-      title: "1Q84",
-      banner: "comicbook-1-banner",
-      book: "comicbook-1-book",
-    },
-  };
   return (
     <Container>
       <div className="header">
@@ -32,6 +44,13 @@ const ComicBook = () => {
           onClick={() => navigate(-1)}
         />
         <img width="16px" src={require("../img/stats.png")} alt="stats" />
+      </div>
+      <div className="blocks">
+        {blocks.map((el, i) => (
+          <div className={i === 0 ? "color-orange" : ""} key={i}>
+            <p className="p-content">{el}</p>
+          </div>
+        ))}
       </div>
 
       <img
@@ -57,10 +76,14 @@ const ComicBook = () => {
       </section>
 
       <section className="bottom-bar">
-        <img src={like_btn} alt="like-btn" />
+        <h1>{map_id_to_content[id].title}</h1>
         <div className="btn-wrap">
-          <button className="go-chat-btn">채팅하기</button>
-          <button className="go-pay-btn">마나페이 구매</button>
+          <img src={content_icon} alt="content-icon" />
+          <div className="nav-wrap">
+            <img src={prev_icon} alt="prev-icon" />
+            <p>1</p>
+            <img src={next_icon} alt="next-icon" />
+          </div>
         </div>
       </section>
     </Container>
@@ -72,6 +95,8 @@ export default ComicBook;
 const Container = styled.section`
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding-bottom: 100px;
 
   .header {
     display: flex;
@@ -80,6 +105,44 @@ const Container = styled.section`
     margin: 5px 35px;
     height: 50px;
     margin-top: 30px;
+  }
+
+  .blocks {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: #ededed;
+    padding: 10px;
+    overflow-y: scroll;
+    .p-content {
+      color: #000000;
+      white-space: nowrap;
+      width: 50px;
+      text-align: center;
+    }
+    .color-orange {
+      background-color: #ff9771;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 5px;
+      padding: 5px 10px;
+
+      p {
+        font-size: 12px;
+        margin: 0;
+        color: #ffffff;
+        font-weight: 600;
+      }
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
   }
   .img-holder {
     position: relative;
@@ -172,8 +235,12 @@ const Container = styled.section`
     align-items: center;
     justify-content: space-around;
     gap: 20px;
-    padding: 30px 20px;
+    padding: 0;
     border-top: 1px solid #ededed;
+    background-color: #f7f7f7;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
     img {
       width: 20px;
@@ -182,7 +249,23 @@ const Container = styled.section`
     .btn-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+
+      img {
+        width: 30px;
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        img {
+          object-fit: contain;
+          width: 30px;
+        }
+      }
 
       button {
         border: none;

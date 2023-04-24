@@ -37,6 +37,28 @@ const categories = [
   "환경부",
   "Apple 아이맥 5K",
 ];
+const map_item_names = [
+  "레고",
+  "베어브릭",
+  "피규어",
+  "토이",
+  "어패럴",
+  "레전드IP",
+  "명품관",
+  "웹툰",
+  "웹소설",
+];
+const map_item_names_2 = [
+  "LEGO",
+  "BEAR",
+  "FIGURE",
+  "TOY",
+  "APPAREL",
+  "LEGEND",
+  "LUXURY",
+  "TOON",
+  "NOVEl",
+];
 const Main = () => {
   const navigate = useNavigate();
   const [isTransparent, setIsTransparent] = React.useState(true);
@@ -81,13 +103,18 @@ const Main = () => {
       <Carousel images={images} autoplay={true} autoplayDelay={3000} />
       <section className="sub-nav-outer">
         <section className="sub-nav-inner">
-          {new Array(7).fill("*").map((el, i) => (
+          {new Array(9).fill("*").map((el, i) => (
             <div key={i} className="img-wrap">
-              <img
-                src={require(`../../img/main/category-slot-${i}.png`)}
-                alt="movie-figure"
-              />
-              <p>청동거인</p>
+              <div className="img-container">
+                <img
+                  src={require(`../../img/category-icon-${i + 1}.png`)}
+                  alt="movie-figure"
+                />
+                <div className="backgroundC">
+                  <p className="hover-text">{map_item_names_2[i]}</p>
+                </div>
+              </div>
+              <p>{map_item_names[i]}</p>
             </div>
           ))}
         </section>
@@ -270,7 +297,7 @@ const Container = styled.div`
       align-items: flex-start;
       justify-content: flex-start;
       gap: 15px;
-      margin: 6px;
+      margin: 25px 26px 6px;
 
       .img-wrap {
         display: flex;
@@ -278,16 +305,41 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
 
-        img {
-          width: 45px;
+        .img-container {
+          position: relative;
+          overflow: hidden;
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 50%;
+          .backgroundC {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            .hover-text {
+              text-align: center;
+              color: #ffffff;
+              font-weight: 900;
+              font-size: 10px;
+            }
+          }
+          img {
+            width: 45px;
+          }
         }
 
         p {
           margin: 10px;
-          font-size: 9px;
-          font-weight: 700;
+          font-size: 15px;
+          font-weight: 500;
+          color: #999999;
           width: 100%;
           text-align: center;
+          white-space: nowrap;
+          margin: 5px 0;
         }
       }
     }
