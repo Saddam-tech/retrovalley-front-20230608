@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+## RetroValley documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Yarn as a package manager => using yarn as a package manager (advised to use yarn) (yarn usage is documented on the bottom of the file)
+
+# The source folder has all the main folders and files:
+
+- components
+- data (has the locally stored data that will be replaced with the data coming from the backend)
+- Icons
+- img
+
+# App.js => Routing code has been placed here. Using Outlet component to render child components from a parent component. The rest of the links are mapped from the router file.
+
+# components/Home.js => is the navigation page with the bottomNavbar (uses the <Outlet> component to render inner content)
+
+# components/IndexPage.js => Links to the pages are reflected on this page (route is on /index). Can see all the available pages on this page.
+
+# components/Banner_1.js && Banner_2.js are used as initial starting pages and can be optimized to be on one file.
 
 ## Available Scripts
 
