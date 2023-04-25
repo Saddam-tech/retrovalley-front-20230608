@@ -11,6 +11,8 @@
 
 # App.js => Routing code has been placed here. Using Outlet component to render child components from a parent component. The rest of the links are mapped from the router file.
 
+# router.js => has additional routes (it is imported the App.js and rendered from there).
+
 # components/Home.js => is the navigation page with the bottomNavbar (uses the <Outlet> component to render inner content)
 
 # components/IndexPage.js => Links to the pages are reflected on this page (route is on /index). Can see all the available pages on this page.
