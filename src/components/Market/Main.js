@@ -98,7 +98,7 @@ const Main = () => {
       <div className="header">
         <div className="inner-wrap">
           <MenuTwoToneIcon
-            onClick={() => navigate("/home/category")}
+            onClick={() => navigate("/home/menu")}
             sx={{ color: !isTransparent ? "000000" : "#65bc7b", fontSize: 35 }}
           />
           <img

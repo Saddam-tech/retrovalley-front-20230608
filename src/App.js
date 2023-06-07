@@ -76,7 +76,7 @@ export default function App() {
                       main={[
                         {
                           name: "전체",
-                          path: "/home/menu",
+                          path: "/home/products",
                         },
                         {
                           name: "단행본",

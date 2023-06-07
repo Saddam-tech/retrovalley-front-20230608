@@ -144,17 +144,17 @@ const section_8 = [
       {
         name: "웹툰",
         url: category_15,
-        path: "/readcontent/0",
+        path: "/readcontent/1",
       },
       {
-        name: "웹소설",
+        name: "고전만화",
         url: category_16,
-        path: "/readcontent/1",
+        path: "/readcontent/5",
       },
       {
         name: "고전 ebook",
         url: category_17,
-        path: "/readcontent/1",
+        path: "/home/category",
       },
     ],
   },
