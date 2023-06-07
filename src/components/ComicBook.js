@@ -8,6 +8,7 @@ import next_icon from "../img/next-icon.png";
 import prev_icon from "../img/prev-icon.png";
 import content_icon from "../img/content-icon.png";
 import { useNavigate, useParams } from "react-router-dom";
+import { map_id_to_content } from "../data/products";
 const blocks = [
   "웹툰",
   "웹소설",
@@ -19,19 +20,6 @@ const blocks = [
   "챔프",
 ];
 
-const map_id_to_content = {
-  0: {
-    title: "비뢰도",
-    banner: "ads",
-    book: "srthsre",
-  },
-  1: {
-    title: "1Q84",
-    banner: "comicbook-1-banner",
-    book: "comicbook-1-book",
-  },
-};
-
 const ComicBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -39,10 +27,10 @@ const ComicBook = () => {
   return (
     <Container>
       <div className="header">
-        <ArrowBackIosIcon
-          sx={{ color: "#999999" }}
-          onClick={() => navigate(-1)}
-        />
+        <div className="inner-wrap">
+          <ArrowBackIosIcon onClick={() => navigate(-1)} />
+          <h1>{map_id_to_content[id].page}</h1>
+        </div>
         <img width="16px" src={require("../img/stats.png")} alt="stats" />
       </div>
       <div className="blocks">
@@ -55,7 +43,7 @@ const ComicBook = () => {
 
       <img
         className="product-image"
-        src={require(`../img/${map_id_to_content[id].banner}.png`)}
+        src={require(`../img/ads.png`)}
         alt="retro-toy"
       />
       <div className="img-holder">
@@ -66,17 +54,21 @@ const ComicBook = () => {
       </div>
 
       <section className="block">
-        <h1>{map_id_to_content[id].title}</h1>
+        <h1>{map_id_to_content[id].title} 1화</h1>
         <section className="book-content">
           <img
-            src={require(`../img/${map_id_to_content[id].book}.png`)}
+            src={require(`../img/comics_content/comics_content_${id}.png`)}
             alt="comic-book"
           />
         </section>
       </section>
 
       <section className="bottom-bar">
-        <h1>{map_id_to_content[id].title}</h1>
+        <h1>
+          {map_id_to_content[id].title.length > 10
+            ? map_id_to_content[id].title.slice(0, 10) + "..."
+            : map_id_to_content[id].title}
+        </h1>
         <div className="btn-wrap">
           <img src={content_icon} alt="content-icon" />
           <div className="nav-wrap">
@@ -101,10 +93,21 @@ const Container = styled.section`
   .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 5px 35px;
-    height: 50px;
-    margin-top: 30px;
+    justify-content: space-around;
+    width: 100%;
+    gap: 120px;
+
+    .inner-wrap {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      h1 {
+        font-size: 24px;
+        font-weight: 400;
+        color: #191919;
+      }
+    }
   }
 
   .blocks {

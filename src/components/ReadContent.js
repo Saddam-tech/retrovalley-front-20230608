@@ -11,26 +11,12 @@ import watermark from "../img/watermark.png";
 import check_gray from "../img/check-gray.png";
 import check_orange from "../img/check-orange.png";
 import { useNavigate, useParams } from "react-router-dom";
+import { map_id_to_content } from "../data/products";
 const blocks = ["첫화보기", "정주행", "최신화", "최신화", "북마크"];
 const ReadContent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const map_id_to_content = {
-    0: {
-      page: "웹툰",
-      title: "비뢰도",
-      description: "작가 오주,Awin, 검류혼  |  총편수 총 152화",
-      category: "비뢰도",
-      img: "webtoon",
-    },
-    1: {
-      page: "웹소설",
-      title: "1Q84",
-      description: "작가 무라카미 하루키,  |  총편수 총 256화",
-      category: "1Q84",
-      img: "comicbook-1",
-    },
-  };
+
   return (
     <Container>
       <div className="header">
@@ -43,7 +29,7 @@ const ReadContent = () => {
       <div className="img-holder">
         <img
           className="product-image"
-          src={require(`../img/${map_id_to_content[id].img}.png`)}
+          src={require(`../img/banners/comics_banner_${id}.png`)}
           alt="retro-toy"
         />
         <div className="tab-1">
@@ -62,13 +48,7 @@ const ReadContent = () => {
       <section className="sub-section">
         <h1>{map_id_to_content[id].title}</h1>
         <p>{map_id_to_content[id].description}</p>
-        <p>
-          홀로 길러주신 아버지를 돌림병으로 잃고 10세의 어린 나이에 혈혈단신이
-          된 비류연. 조각사였던 아버지에게 배운 기술로 부모님의 조각상을 만들어
-          두분의 묘 앞에 세워두는데, 지나가던 노인이 그걸 보더니 자신을 사부로
-          삼으면 천하제일 무공을 가르쳐주겠다고 한다. 수상쩍지만 달리 갈 곳도
-          없고, 그럴듯해 보이는 무공에 혹해 비류연은 그를 따라가고 마는데….
-        </p>
+        <p>{map_id_to_content[id].text}</p>
         <div className="blocks">
           {blocks.map((el, i) => (
             <div
@@ -104,7 +84,7 @@ const ReadContent = () => {
       <section className="bottom-bar">
         <img src={like_btn} alt="like-btn" />
         <div className="btn-wrap">
-          <button className="go-chat-btn">채팅하기</button>
+          <button className="go-chat-btn">북마크</button>
           <button className="go-pay-btn">마나페이 구매</button>
         </div>
       </section>
@@ -285,6 +265,7 @@ const Container = styled.section`
       }
       .low-padding {
         padding: 3px 10px;
+        background-color: #999999;
       }
       button {
         border: none;
@@ -329,7 +310,7 @@ const Container = styled.section`
       }
 
       .go-chat-btn {
-        background-color: #ff9771;
+        background-color: #999999;
         color: #ffffff;
       }
       .go-pay-btn {

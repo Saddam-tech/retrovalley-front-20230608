@@ -8,7 +8,7 @@ import logo_65bc7b from "../../img/main/logo-65bc7b.png";
 import logo_ffffff from "../../img/main/logo-ffffff.png";
 import Item from "./Item";
 import Carousel from "../Carousel/Carousel";
-import { items, items_1 } from "../../data/products";
+import { items, items_1, items_2 } from "../../data/products";
 import banner_1 from "../../img/banners/banner-1.png";
 import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
@@ -205,7 +205,7 @@ const Main = () => {
                   <div className="wrap-1">
                     <img src={movie_figure_icon} alt="movie-figure-icon" />
                     <div className="wrap-2">
-                      <h1>{["고전 만화", "고전 소설"][i]}</h1>
+                      <h1>{["인기 웹툰", "고전 만화"][i]}</h1>
                       <p>Nike. 154,981개</p>
                     </div>
                   </div>
@@ -213,20 +213,30 @@ const Main = () => {
                 </div>
                 <section className="slide-items">
                   <div className="tape">
-                    {items_1.map((el, _i) => (
-                      <Item
-                        key={_i}
-                        img_width="130px"
-                        img_height="130px"
-                        id={_i}
-                        price={el.price}
-                        description={el.description}
-                        img_src={require(`../../img/tobesold-${
-                          i === 0 ? "" : "2-"
-                        }${_i}.png`)}
-                        alternative={i}
-                      />
-                    ))}
+                    {i === 0 &&
+                      items_1.map((el, _i) => (
+                        <Item
+                          key={_i}
+                          img_width="130px"
+                          img_height="130px"
+                          id={_i}
+                          description={el.description}
+                          img_src={require(`../../img/comics/comics_${el.index}.png`)}
+                          alternative={el.index}
+                        />
+                      ))}
+                    {i === 1 &&
+                      items_2.map((el, _i) => (
+                        <Item
+                          key={_i}
+                          img_width="130px"
+                          img_height="130px"
+                          id={_i}
+                          description={el.description}
+                          img_src={require(`../../img/comics/comics_${el.index}.png`)}
+                          alternative={el.index}
+                        />
+                      ))}
                   </div>
                 </section>
               </section>

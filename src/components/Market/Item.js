@@ -26,7 +26,8 @@ const Item = ({
     >
       <img src={img_src} alt="nft-sample" />
       <div className="title">
-        <h1>{price}</h1>
+        {price && <h1>{price}</h1>}
+
         <p>{description}</p>
       </div>
     </Container>
