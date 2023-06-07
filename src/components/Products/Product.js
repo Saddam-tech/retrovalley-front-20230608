@@ -13,7 +13,7 @@ const Product = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <Container onClick={() => navigate(`/products/product/${id}`)}>
+    <Container onClick={() => navigate(`/readcontent/3`)}>
       <img className="nft-sample" src={nft_img_src} alt="nft-sample" />
       <div className="title">
         <h1>{img_title}</h1>

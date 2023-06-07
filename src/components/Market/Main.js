@@ -43,26 +43,34 @@ const categories = [
   "Apple 아이맥 5K",
 ];
 const map_item_names = [
-  "레고",
-  "베어브릭",
   "피규어",
   "토이",
-  "어패럴",
+  "웹툰",
+  "고전만화",
+  "레고",
   "레전드IP",
   "명품관",
-  "웹툰",
-  "웹소설",
+  "베어브릭",
 ];
 const map_item_names_2 = [
-  "LEGO",
-  "BEAR",
   "FIGURE",
   "TOY",
-  "APPAREL",
+  "TOON",
+  "MANA",
+  "LEGO",
   "LEGEND",
   "LUXURY",
-  "TOON",
-  "NOVEl",
+  "BEAR",
+];
+const navigation_links = [
+  "/products/product/0",
+  "/products/product/1",
+  "/readcontent/0",
+  "/readcontent/3",
+  "/products/product/1",
+  "/products/product/3",
+  "/products/product/4",
+  "/products/product/0",
 ];
 const Main = () => {
   const navigate = useNavigate();
@@ -116,9 +124,12 @@ const Main = () => {
       <Carousel images={images} autoplay={true} autoplayDelay={3000} />
       <section className="sub-nav-outer">
         <section className="sub-nav-inner">
-          {new Array(9).fill("*").map((el, i) => (
+          {new Array(8).fill("*").map((el, i) => (
             <div key={i} className="img-wrap">
-              <div className="img-container">
+              <div
+                onClick={() => navigate(navigation_links[i])}
+                className="img-container"
+              >
                 <img
                   src={require(`../../img/category-icon-${i + 1}.png`)}
                   alt="movie-figure"
