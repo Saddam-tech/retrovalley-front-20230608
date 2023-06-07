@@ -10,6 +10,7 @@ const Category = ({ pageName, main, sub }) => {
   const MAP_PATH_TO_STRING = {
     단행본: true,
     연재본: true,
+    전체: true,
   };
 
   function handleClick(params) {
