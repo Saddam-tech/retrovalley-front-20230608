@@ -63,33 +63,33 @@ export const products = [
 
 export const items = [
   {
-    price: "143,000원",
-    description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    price: "146,000원",
+    description: "철인28호 레트로 피규어 한정판",
     img_src: "toy-1",
   },
   {
-    price: "143,000원",
-    description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    price: "64,000원",
+    description: "84년형 레트로토이 현대 포니엑셀",
     img_src: "car-1",
   },
   {
-    price: "143,000원",
-    description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    price: "279,000원",
+    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
     img_src: "ranger-1",
   },
   {
-    price: "143,000원",
-    description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    price: "69,000원",
+    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
     img_src: "ranger-6",
   },
   {
-    price: "143,000원",
-    description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    price: "123,000원",
+    description: "가면라이더  Kamen Rider 한정판",
     img_src: "antman-1",
   },
   {
-    price: "143,000원",
-    description: "나이키 킬샷 2 레더 크림 루키드 그린",
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
     img_src: "boy-1",
   },
 ];
