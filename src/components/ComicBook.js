@@ -57,7 +57,7 @@ const ComicBook = () => {
       </div>
 
       <section className="block">
-        <h1>{map_id_to_content[id].title} 1화</h1>
+        <h1>{book_name}</h1>
         <section className="book-content">
           <img
             src={require(`../img/comics_content/${book_name}.jpg`)}
