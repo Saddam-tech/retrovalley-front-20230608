@@ -66,7 +66,7 @@ const navigation_links = [
   "/products/product/0",
   "/products/product/1",
   "/readcontent/0",
-  "/readcontent/3",
+  "/home/products/?string=단행본",
   "/products/product/1",
   "/products/product/3",
   "/products/product/4",

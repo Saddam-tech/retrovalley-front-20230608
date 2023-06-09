@@ -36,9 +36,7 @@ const ReadContent = () => {
           <img className="watermark" src={watermark} alt="watermark" />
           <img className="like-btn-red" src={like_btn_red} alt="like_btn_red" />
         </div>
-        {/* <div className="tab-2">
-          <p>1/1</p>
-        </div> */}
+
         <div className="tab-3">
           <img src={mana_pay} alt="mana-pay" />
           <p>지금 마나페이로 구매하고, 마나를 모으세요!</p>
@@ -53,7 +51,15 @@ const ReadContent = () => {
           {blocks.map((el, i) => (
             <div
               className={i === 0 ? "color-orange" : ""}
-              onClick={() => (i === 0 ? navigate(`/comicbook/${id}`) : "")}
+              onClick={() =>
+                i === 0
+                  ? navigate(
+                      `/comicbook/${id}?search=${encodeURIComponent(
+                        map_id_to_content[id]["book_names"][0]
+                      )}`
+                    )
+                  : ""
+              }
               key={i}
             >
               {i === 3 && <img src={like_btn_red} alt="icons" />}
@@ -74,7 +80,16 @@ const ReadContent = () => {
                 {i + 1}화
               </h1>
             </div>
-            <button className={i > 2 ? "low-padding" : ""}>
+            <button
+              onClick={() =>
+                navigate(
+                  `/comicbook/${id}?search=${encodeURIComponent(
+                    map_id_to_content[id]["book_names"][i]
+                  )}`
+                )
+              }
+              className={i > 2 ? "low-padding" : ""}
+            >
               {i > 2 ? "10 마나" : "무료"}
             </button>
           </div>

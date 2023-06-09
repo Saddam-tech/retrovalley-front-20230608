@@ -7,7 +7,7 @@ import like_btn from "../img/like-btn.png";
 import next_icon from "../img/next-icon.png";
 import prev_icon from "../img/prev-icon.png";
 import content_icon from "../img/content-icon.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { map_id_to_content } from "../data/products";
 const blocks = [
   "웹툰",
@@ -23,6 +23,9 @@ const blocks = [
 const ComicBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const location = useLocation();
+  const searchQuery = new URLSearchParams(location.search);
+  const book_name = searchQuery.get("search");
 
   return (
     <Container>
@@ -57,7 +60,7 @@ const ComicBook = () => {
         <h1>{map_id_to_content[id].title} 1화</h1>
         <section className="book-content">
           <img
-            src={require(`../img/comics_content/comics_content_${id}.png`)}
+            src={require(`../img/comics_content/${book_name}.jpg`)}
             alt="comic-book"
           />
         </section>
