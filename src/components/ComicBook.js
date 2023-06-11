@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
@@ -25,7 +25,24 @@ const ComicBook = () => {
   const { id } = useParams();
   const location = useLocation();
   const searchQuery = new URLSearchParams(location.search);
-  const book_name = searchQuery.get("search");
+  const cur_book_name = searchQuery.get("search");
+  const [bookName, setBookName] = useState(cur_book_name);
+
+  function handlePaginate(direction) {
+    const arr = map_id_to_content[id]["book_names"];
+    const index = arr.indexOf(cur_book_name);
+    switch (direction) {
+      case "next":
+        setBookName(arr[index + 1]);
+        break;
+      case "prev":
+        if (arr.length < index - 1) {
+          setBookName(arr[index - 1]);
+        }
+        break;
+      default:
+    }
+  }
 
   return (
     <Container>
@@ -57,10 +74,10 @@ const ComicBook = () => {
       </div>
 
       <section className="block">
-        <h1>{book_name}</h1>
+        <h1>{cur_book_name}</h1>
         <section className="book-content">
           <img
-            src={require(`../img/comics_content/${book_name}.jpg`)}
+            src={require(`../img/comics_content/${cur_book_name}.jpg`)}
             alt="comic-book"
           />
         </section>
