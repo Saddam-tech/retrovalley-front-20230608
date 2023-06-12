@@ -27,17 +27,21 @@ const ComicBook = () => {
   const searchQuery = new URLSearchParams(location.search);
   const cur_book_name = searchQuery.get("search");
   const [bookName, setBookName] = useState(cur_book_name);
+  const [curIndex, setCurIndex] = useState(0);
 
   function handlePaginate(direction) {
     const arr = map_id_to_content[id]["book_names"];
-    const index = arr.indexOf(cur_book_name);
     switch (direction) {
       case "next":
-        setBookName(arr[index + 1]);
+        if (arr.length > curIndex + 1) {
+          setBookName(arr[curIndex + 1]);
+          setCurIndex((prev) => prev + 1);
+        }
         break;
       case "prev":
-        if (arr.length < index - 1) {
-          setBookName(arr[index - 1]);
+        if (curIndex - 1 >= 0) {
+          setBookName(arr[curIndex - 1]);
+          setCurIndex((prev) => prev - 1);
         }
         break;
       default:
@@ -77,7 +81,7 @@ const ComicBook = () => {
         <h1>{cur_book_name}</h1>
         <section className="book-content">
           <img
-            src={require(`../img/comics_content/${cur_book_name}.jpg`)}
+            src={require(`../img/comics_content/${bookName}.jpg`)}
             alt="comic-book"
           />
         </section>
@@ -92,9 +96,17 @@ const ComicBook = () => {
         <div className="btn-wrap">
           <img src={content_icon} alt="content-icon" />
           <div className="nav-wrap">
-            <img src={prev_icon} alt="prev-icon" />
+            <img
+              onClick={() => handlePaginate("prev")}
+              src={prev_icon}
+              alt="prev-icon"
+            />
             <p>1</p>
-            <img src={next_icon} alt="next-icon" />
+            <img
+              onClick={() => handlePaginate("next")}
+              src={next_icon}
+              alt="next-icon"
+            />
           </div>
         </div>
       </section>
