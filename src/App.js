@@ -57,11 +57,11 @@ export default function App() {
                         },
                         {
                           name: "SHOP",
-                          path: "/comicbook/1",
+                          path: "/home/nomatch",
                         },
                         {
                           name: "E-BOOK",
-                          path: "/webtoon",
+                          path: "home/nomatch",
                         },
                       ]}
                       sub={["작가", "년도", "브랜드", "국가", "설정"]}

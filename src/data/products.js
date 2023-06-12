@@ -96,7 +96,7 @@ export const items = [
 export const items_1 = [
   {
     index: 0,
-    description: "판타스틱",
+    description: "판다스틱",
   },
   {
     index: 1,
@@ -120,11 +120,11 @@ export const items_2 = [
 export const map_id_to_content = {
   0: {
     page: "웹툰",
-    title: "판타스틱",
+    title: "판다스틱",
     description: "작가 미라이  |  총편수 총 30화",
     text: "단어가 Fantasy의 형용사형인 것에서 알 수 있듯이 “환상적인”이라는 뜻이다. 주로 감탄사로 쓰이는데. 말 그대로 어떠한 것의 감탄사로도 쓰이지만 일상적인 표현에서는 상황이 좋지 않거나 설상가상인 상황에서 “아주 환상적이구만” 정도의 뉘앙스를 가지고 있다.",
     category: "비뢰도",
-    book_names: ["판타스틱01화", "판타스틱02화", "판타스틱03화"],
+    book_names: ["판다스틱01화", "판다스틱02화", "판다스틱03화"],
   },
   1: {
     page: "웹툰",
