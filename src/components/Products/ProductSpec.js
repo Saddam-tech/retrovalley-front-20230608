@@ -193,10 +193,11 @@ const Container = styled.section`
   }
   .img-holder {
     position: relative;
+
     width: 100%;
     .img-map {
       display: flex;
-      overflow-y: scroll;
+      overflow: hidden;
 
       .product-image {
         width: 100vw;

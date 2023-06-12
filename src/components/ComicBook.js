@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import mana_pay from "../img/mana_pay.png";
-import like_btn from "../img/like-btn.png";
+import next_icon_active from "../img/next-btn-active.png";
 import next_icon from "../img/next-icon.png";
+import prev_icon_active from "../img/prev-btn-active.png";
 import prev_icon from "../img/prev-icon.png";
 import content_icon from "../img/content-icon.png";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
@@ -98,13 +98,17 @@ const ComicBook = () => {
           <div className="nav-wrap">
             <img
               onClick={() => handlePaginate("prev")}
-              src={prev_icon}
+              src={curIndex - 1 >= 0 ? prev_icon_active : prev_icon}
               alt="prev-icon"
             />
-            <p>1</p>
+            <p>{curIndex + 1}</p>
             <img
               onClick={() => handlePaginate("next")}
-              src={next_icon}
+              src={
+                map_id_to_content[id]["book_names"].length > curIndex + 1
+                  ? next_icon_active
+                  : next_icon
+              }
               alt="next-icon"
             />
           </div>
