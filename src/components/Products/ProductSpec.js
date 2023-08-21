@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import retro_toy from "../../img/retro_toy.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -11,11 +11,12 @@ import like_btn from "../../img/like-btn.png";
 import like_btn_red from "../../img/like-btn-red.png";
 import watermark from "../../img/watermark.png";
 import mana from "../../img/mana.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 const ProductSpec = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [activeIndex, setActiveIndex] = useState(0);
+  const location = useLocation;
 
   const map_path_to_img = {
     0: ["toy-1", "toy-2", "toy-3", "toy-4", "toy-5"],
@@ -64,6 +65,11 @@ const ProductSpec = () => {
         "제작자인 과학성 장관 텐마 박사의 아들인 텐마 토비오의 외형을 본딴 로봇으로 토비오가 사고로 사망하게 되자 텐마 박사가 만들었다. 로봇이라서 친아들 토비오처럼 성장하지 않는다고 텐마 박사에게 구박 받다가 서커스단에 팔리게 되지만,[2] 우여곡절 끝에 텐마 박사의 후임 장관이 된 오챠노미즈 박사에게 구원받고 새로운 삶을 살게 된다. 가족은 본인보다 나이가 어린 로봇 부모[3]가 있으며, 남동생 코발트와 여동생 우란이 있다.",
     },
   };
+
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleNext = (images) => {
     setActiveIndex(activeIndex === images.length - 1 ? 0 : activeIndex + 1);

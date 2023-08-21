@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
@@ -10,12 +10,18 @@ import webtoon from "../img/webtoon.png";
 import watermark from "../img/watermark.png";
 import check_gray from "../img/check-gray.png";
 import check_orange from "../img/check-orange.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { map_id_to_content } from "../data/products";
 const blocks = ["첫화보기", "정주행", "최신화", "최신화", "북마크"];
 const ReadContent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation;
+
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <Container>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import mana_pay from "../img/mana_pay.png";
@@ -47,6 +47,11 @@ const ComicBook = () => {
       default:
     }
   }
+
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location, curIndex]);
 
   return (
     <Container>

@@ -13,12 +13,6 @@ const Home = () => {
   const [value, setValue] = useState("");
   const navigate = useNavigate();
   const location = useLocation;
-
-  useEffect(() => {
-    // auto-scroll page to the top upon view change
-    window.scrollTo(0, 0);
-  }, [location]);
-
   function handleChangeEvent(_value) {
     switch (_value) {
       case 0:
@@ -39,6 +33,10 @@ const Home = () => {
       default:
     }
   }
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <Container>
       <Outlet />
