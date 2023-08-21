@@ -8,10 +8,16 @@ import ChatIcon from "@mui/icons-material/Chat";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import styled from "styled-components";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 const Home = () => {
   const [value, setValue] = useState("");
   const navigate = useNavigate();
+  const location = useLocation;
+
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
 
   function handleChangeEvent(_value) {
     switch (_value) {
