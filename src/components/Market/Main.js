@@ -5,6 +5,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SearchIcon from "@mui/icons-material/Search";
 import logo_65bc7b from "../../img/main/logo-65bc7b.png";
+import main_logo from "../../img/main-logo.png";
 import logo_ffffff from "../../img/main/logo-ffffff.png";
 import Item from "./Item";
 import Carousel from "../Carousel/Carousel";
@@ -105,11 +106,18 @@ const Main = () => {
     <Container isTransparent={isTransparent}>
       <div className="header">
         <div className="inner-wrap">
-          <MenuTwoToneIcon
+          {/* <MenuTwoToneIcon
             onClick={() => navigate("/home/menu")}
             sx={{ color: !isTransparent ? "000000" : "#65bc7b", fontSize: 35 }}
+          /> */}
+          <img
+            src={main_logo}
+            onClick={() => navigate("/home/main")}
+            className="main-logo"
+            alt="main-logo"
           />
           <img
+            className="sub-logo"
             src={isTransparent ? logo_ffffff : logo_65bc7b}
             alt="logo_65bc7b"
           />
@@ -124,19 +132,19 @@ const Main = () => {
       <Carousel images={images} autoplay={true} autoplayDelay={3000} />
       <section className="sub-nav-outer">
         <section className="sub-nav-inner">
-          {new Array(8).fill("*").map((el, i) => (
+          {new Array(6).fill("*").map((el, i) => (
             <div key={i} className="img-wrap">
               <div
                 onClick={() => navigate(navigation_links[i])}
                 className="img-container"
               >
                 <img
-                  src={require(`../../img/category-icon-${i + 1}.png`)}
+                  src={require(`../../img/link-item-${i}.png`)}
                   alt="movie-figure"
                 />
-                <div className="backgroundC">
+                {/* <div className="backgroundC">
                   <p className="hover-text">{map_item_names_2[i]}</p>
-                </div>
+                </div> */}
               </div>
               <p>{map_item_names[i]}</p>
             </div>
@@ -388,7 +396,7 @@ const Container = styled.div`
     padding: 35px 0 15px;
     position: fixed;
     background-color: ${(props) =>
-      props.isTransparent ? "transparent" : "#f6f6f6"};
+      props.isTransparent ? "transparent" : "#ffffff"};
     top: 0;
     left: 0;
     z-index: 1;
@@ -399,21 +407,24 @@ const Container = styled.div`
       justify-content: space-around;
       gap: 10px;
       margin: 0 20px;
-      img {
+      .sub-logo {
         width: 110px;
+      }
+      .main-logo {
+        width: 40px;
       }
     }
   }
 
   .sub-nav-outer {
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     width: 100%;
     .sub-nav-inner {
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
       gap: 15px;
-      margin: 25px 26px 6px;
+      margin: 25px 26px 0px;
 
       .img-wrap {
         display: flex;
@@ -422,10 +433,11 @@ const Container = styled.div`
         flex-direction: column;
 
         .img-container {
-          position: relative;
-          overflow: hidden;
-          background-color: transparent;
-          .backgroundC {
+          /* width: 100%; */
+          /* position: relative; */
+          /* overflow: hidden; */
+          /* background-color: transparent; */
+          /* .backgroundC {
             position: absolute;
             display: flex;
             width: 100%;
@@ -441,11 +453,11 @@ const Container = styled.div`
               font-size: 9px;
               margin: 0;
             }
-          }
+          } */
           img {
-            border-radius: 50%;
-            filter: brightness(0.8);
-            width: 45px;
+            /* border-radius: 50%; */
+            /* filter: brightness(0.8); */
+            width: 40px;
           }
         }
 

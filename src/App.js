@@ -9,6 +9,7 @@ import { router } from "./router";
 import NoMatch from "./components/NoMatch";
 import Banner_1 from "./components/Banner_1";
 import Block from "./components/Block";
+import Content from "./components/Content";
 const status = true;
 export default function App() {
   return (
@@ -51,18 +52,18 @@ export default function App() {
                           name: "만화책",
                           path: "/home/comics",
                         },
-                        {
-                          name: "장난감",
-                          path: "/home/products",
-                        },
-                        {
-                          name: "SHOP",
-                          path: "/home/nomatch",
-                        },
-                        {
-                          name: "E-BOOK",
-                          path: "home/nomatch",
-                        },
+                        // {
+                        //   name: "장난감",
+                        //   path: "/home/products",
+                        // },
+                        // {
+                        //   name: "SHOP",
+                        //   path: "/home/nomatch",
+                        // },
+                        // {
+                        //   name: "E-BOOK",
+                        //   path: "home/nomatch",
+                        // },
                       ]}
                       sub={["작가", "년도", "브랜드", "국가", "설정"]}
                     />
@@ -74,10 +75,10 @@ export default function App() {
                     <Category
                       pageName="만화책"
                       main={[
-                        {
-                          name: "전체",
-                          path: "/home/products",
-                        },
+                        // {
+                        //   name: "전체",
+                        //   path: "/home/products",
+                        // },
                         {
                           name: "단행본",
                           path: "/home/products",
@@ -91,6 +92,7 @@ export default function App() {
                     />
                   }
                 />
+                <Route path="content/:type" element={<Content />} />
                 <Route path="products" element={<Products />} />
                 <Route path="nomatch" element={<NoMatch />} />
               </Route>

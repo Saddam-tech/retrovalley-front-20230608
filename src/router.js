@@ -40,6 +40,7 @@ export const router = [
   {
     route: "Banner",
     path: "/start",
+    // eslint-disable-next-line react/jsx-pascal-case
     element: <Banner_2 />,
   },
 ];

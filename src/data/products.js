@@ -184,6 +184,152 @@ export const items = [
     img_src: "boy-1",
   },
 ];
+
+export const toy_items = [
+  {
+    price: "146,000원",
+    description: "철인28호 레트로 피규어 한정판",
+    img_src: "toy-0",
+  },
+  {
+    price: "64,000원",
+    description: "84년형 레트로토이 현대 포니엑셀",
+    img_src: "toy-1",
+  },
+  {
+    price: "279,000원",
+    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
+    img_src: "toy-2",
+  },
+  {
+    price: "69,000원",
+    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
+    img_src: "toy-3",
+  },
+  {
+    price: "123,000원",
+    description: "가면라이더  Kamen Rider 한정판",
+    img_src: "toy-4",
+  },
+  {
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    img_src: "toy-5",
+  },
+];
+
+export const webtoon_items = [
+  {
+    price: "146,000원",
+    description: "철인28호 레트로 피규어 한정판",
+    img_src: "comics-0",
+  },
+  {
+    price: "64,000원",
+    description: "84년형 레트로토이 현대 포니엑셀",
+    img_src: "comics-1",
+  },
+  {
+    price: "279,000원",
+    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
+    img_src: "comics-2",
+  },
+  {
+    price: "69,000원",
+    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
+    img_src: "comics-6",
+  },
+  {
+    price: "123,000원",
+    description: "가면라이더  Kamen Rider 한정판",
+    img_src: "comics-7",
+  },
+  {
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    img_src: "comics-8",
+  },
+  {
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    img_src: "comics-9",
+  },
+  {
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    img_src: "comics-10",
+  },
+];
+
+export const comics_items = [
+  {
+    price: "146,000원",
+    description: "철인28호 레트로 피규어 한정판",
+    img_src: "comics-11",
+  },
+  {
+    price: "64,000원",
+    description: "84년형 레트로토이 현대 포니엑셀",
+    img_src: "comics-12",
+  },
+  {
+    price: "279,000원",
+    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
+    img_src: "comics-13",
+  },
+  {
+    price: "69,000원",
+    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
+    img_src: "comics-14",
+  },
+  {
+    price: "123,000원",
+    description: "가면라이더  Kamen Rider 한정판",
+    img_src: "comics-15",
+  },
+  {
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    img_src: "comics-16",
+  },
+  {
+    price: "318,000원",
+    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    img_src: "comics-17",
+  },
+];
+
+export const map_type_to_content = {
+  figure: {
+    title: "피규어",
+    banner: "",
+    description: "한정판 레트로 피규어는 레트로밸리에서….",
+    folder: "product_img",
+    arr: items,
+  },
+  toy: {
+    title: "토이",
+    banner: "",
+    description: "레트로밸리 토이로 레트로 감성 인싸가 되세요.",
+    folder: "toys",
+    arr: toy_items,
+  },
+  webtoon: {
+    title: "웹툰",
+    banner: "",
+    description: "레트로밸리 웹툰 아카이브 라이브러리에 오신걸 환영해요!",
+    folder: "comics",
+    arr: webtoon_items,
+  },
+  comics: {
+    title: "고전만화",
+    banner: "",
+    description: "잊혀졌던 어린시절 나만의 영웅들을 찾아라~!!!",
+    folder: "comics",
+    arr: comics_items,
+  },
+};
+
 export const items_1 = [
   {
     index: 0,
