@@ -1,17 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import banner_5 from "../img/banner-5.png";
+import banner_5 from "../img/main_banner_1.png";
 import next_btn from "../img/next-btn.png";
-import line from "../img/line.png";
 import { useNavigate } from "react-router-dom";
 const Banner_1 = () => {
   const navigate = useNavigate();
   return (
     <Container>
       <img src={banner_5} alt="banner" />
-      <button onClick={() => navigate("/start")} className="next-btn">
-        Hellow
-      </button>
+      <div className="wrap">
+        <p>어린시절, 골목을 함께 뛰놀았던 나만의 영웅들</p>
+        <img
+          onClick={() => navigate("/start")}
+          className="next-btn"
+          src={next_btn}
+          alt="next-btn"
+        />
+      </div>
+      <div className="line-holder">
+        <hr className="active" />
+        <hr />
+      </div>
     </Container>
   );
 };
@@ -24,26 +33,43 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   img {
-    /* object-fit: cover; */
+    object-fit: cover;
     width: 100%;
     height: 100vh;
   }
 
-  .next-btn {
+  .wrap {
     position: absolute;
-    bottom: 60px;
-    width: 85%;
-    background-color: #1d2089;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    bottom: 80px;
+    .next-btn {
+      width: 50px;
+      height: 50px;
+    }
+    p {
+      color: #ffffff;
+    }
   }
 
-  .line {
-    width: 100%;
-    height: 10px;
+  .line-holder {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+    width: 80%;
+    hr {
+      background-color: #afaeae;
+      opacity: 0.4;
+      border: none;
+      width: 100%;
+      height: 5px;
+    }
+    .active {
+      background-color: #ffffff;
+      opacity: 1;
+    }
   }
 `;
