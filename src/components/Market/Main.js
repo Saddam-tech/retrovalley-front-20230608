@@ -14,12 +14,12 @@ import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
 import banner_7 from "../../img/banners/banner-7.png";
 import banner_8 from "../../img/banners/banner-8.png";
-import banner_9 from "../../img/banners/nike-1.png";
-import banner_10 from "../../img/banners/nike-2.png";
-import banner_11 from "../../img/banners/nike-3.png";
-import banner_12 from "../../img/banners/nike-4.png";
-import movie_figure_icon from "../../img/movie-figure.svg";
-import profile_1 from "../../img/profile_1.png";
+import banner_9 from "../../img/banners/nike-6.png";
+import banner_10 from "../../img/banners/nike-7.png";
+import banner_11 from "../../img/banners/nike-8.png";
+import banner_12 from "../../img/banners/nike-9.png";
+import movie_figure_icon from "../../img/webtoon-icon.png";
+import movie_figure_icon_2 from "../../img/webtoon-icon-2.png";
 import check_orange from "../../img/checked.svg";
 import AnimatedCarousel from "../Carousel/AnimatedCarousel";
 import { useNavigate } from "react-router-dom";
@@ -87,7 +87,7 @@ const Main = () => {
   };
 
   const handleNav = (index) => {
-    if (index === 1) {
+    if (index === 2) {
       navigate("/home/nomatch");
     } else {
       setActiveIndex(index);
@@ -214,7 +214,10 @@ const Main = () => {
               <section key={i} className="sale-section">
                 <div className="header-title">
                   <div className="wrap-1">
-                    <img src={movie_figure_icon} alt="movie-figure-icon" />
+                    <img
+                      src={[movie_figure_icon, movie_figure_icon_2][i]}
+                      alt="movie-figure-icon"
+                    />
                     <div className="wrap-2">
                       <h1>{["인기 웹툰", "고전 만화"][i]}</h1>
                       <p>Nike. 154,981개</p>
@@ -256,12 +259,15 @@ const Main = () => {
         </>
       )}
 
-      {activeIndex === 2 && (
+      {activeIndex === 1 && (
         <>
           <section className="events">
             {new Array(5).fill("").map((_, i) => (
               <div key={i} className="event">
-                <img src={profile_1} alt="profile_pic" />
+                <img
+                  src={require(`../../img/profile_${i + 1}.png`)}
+                  alt="profile_pic"
+                />
                 <div className="text-wrap">
                   <h1>84태권브이 한정판 에디션 + 제품인증서 양도합니다.</h1>
                   <div className="inner-wrap">
@@ -508,6 +514,9 @@ const Container = styled.div`
     flex-wrap: wrap;
     overflow-x: scroll;
   }
+  .products::-webkit-scrollbar {
+    height: 0;
+  }
 
   .events {
     display: flex;
@@ -635,7 +644,6 @@ const Container = styled.div`
       }
     }
   }
-
   .slider-bar {
     width: 100%;
     overflow-x: scroll;
@@ -656,6 +664,9 @@ const Container = styled.div`
         background-color: #65bc7b;
       }
     }
+  }
+  .slider-bar::-webkit-scrollbar {
+    height: 0;
   }
   .filters {
     display: flex;
@@ -708,9 +719,7 @@ const Container = styled.div`
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
-            -webkit-box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
-            -moz-box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 0.2);
+            border: 1px solid #eaeaea;
           }
           .wrap-2 {
             display: flex;
@@ -755,6 +764,9 @@ const Container = styled.div`
           margin: 10px;
           gap: 10px;
         }
+      }
+      .slide-items::-webkit-scrollbar {
+        height: 0;
       }
     }
   }
