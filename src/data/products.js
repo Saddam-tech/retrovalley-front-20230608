@@ -187,114 +187,114 @@ export const items = [
 
 export const toy_items = [
   {
-    price: "146,000원",
-    description: "철인28호 레트로 피규어 한정판",
+    price: "96,000원",
+    description: "레트로토이카 1905 포드 한정판",
     img_src: "toy-0",
   },
   {
-    price: "64,000원",
-    description: "84년형 레트로토이 현대 포니엑셀",
+    price: "148,000원",
+    description: "1918 RUN ABOUT BARREL BANK한정판",
     img_src: "toy-1",
   },
   {
-    price: "279,000원",
-    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
+    price: "181,000원",
+    description: "1957 FORD RANCHERO 레트로토이 카",
     img_src: "toy-2",
   },
   {
-    price: "69,000원",
-    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
+    price: "104,000원",
+    description: "1912 OPEN CAB BANK 레트로토이 카",
     img_src: "toy-3",
   },
   {
-    price: "123,000원",
-    description: "가면라이더  Kamen Rider 한정판",
+    price: "69,000원",
+    description: "THUNDER ROBOT한정판 에디션 레트로토이",
     img_src: "toy-4",
   },
   {
-    price: "318,000원",
-    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    price: "164,000원",
+    description: "SMOKEING SPACE MAN 한정판 레트로토이",
     img_src: "toy-5",
   },
 ];
 
 export const webtoon_items = [
   {
-    price: "146,000원",
-    description: "철인28호 레트로 피규어 한정판",
+    price: "판다스틱",
+    description: "",
     img_src: "comics-0",
   },
   {
-    price: "64,000원",
-    description: "84년형 레트로토이 현대 포니엑셀",
+    price: "탈력부부",
+    description: "",
     img_src: "comics-1",
   },
   {
-    price: "279,000원",
-    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
+    price: "비뢰도",
+    description: "",
     img_src: "comics-2",
   },
   {
-    price: "69,000원",
-    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
+    price: "사냥개들",
+    description: "",
     img_src: "comics-6",
   },
   {
-    price: "123,000원",
-    description: "가면라이더  Kamen Rider 한정판",
+    price: "화산귀환",
+    description: "",
     img_src: "comics-7",
   },
   {
-    price: "318,000원",
-    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    price: "내일",
+    description: "",
     img_src: "comics-8",
   },
   {
-    price: "318,000원",
-    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    price: "전지적 독자시점",
+    description: "",
     img_src: "comics-9",
   },
   {
-    price: "318,000원",
-    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    price: "내가키운 S급들",
+    description: "",
     img_src: "comics-10",
   },
 ];
 
 export const comics_items = [
   {
-    price: "146,000원",
-    description: "철인28호 레트로 피규어 한정판",
+    price: "똘이장군",
+    description: "",
     img_src: "comics-11",
   },
   {
-    price: "64,000원",
-    description: "84년형 레트로토이 현대 포니엑셀",
+    price: "로보트킹",
+    description: "",
     img_src: "comics-12",
   },
   {
-    price: "279,000원",
-    description: "84태권브이 한정판 에디션 + 제품인증서 양도합니다.",
+    price: "태권브이와 황금마왕",
+    description: "",
     img_src: "comics-13",
   },
   {
-    price: "69,000원",
-    description: "태권브이 SILVER  한정판 에디션 + 제품인증서",
+    price: "로보트태권브이",
+    description: "",
     img_src: "comics-14",
   },
   {
-    price: "123,000원",
-    description: "가면라이더  Kamen Rider 한정판",
+    price: "황금날개",
+    description: "",
     img_src: "comics-15",
   },
   {
-    price: "318,000원",
-    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    price: "꼬마도사 똘이",
+    description: "",
     img_src: "comics-16",
   },
   {
-    price: "318,000원",
-    description: "철완 아톰  ASTRO BOY 1:30스케일 한정판",
+    price: "쏠라 원투쓰리",
+    description: "",
     img_src: "comics-17",
   },
 ];

@@ -64,14 +64,12 @@ const map_item_names_2 = [
   "BEAR",
 ];
 const navigation_links = [
-  "/products/product/0",
-  "/products/product/1",
-  "/readcontent/0",
-  "/home/products/?string=단행본",
-  "/products/product/1",
-  "/products/product/3",
-  "/products/product/4",
-  "/products/product/0",
+  "/home/content/figure",
+  "/home/content/toy",
+  "/home/content/webtoon",
+  "/home/content/comics",
+  "/home/products?string=단행본",
+  "/home/comics",
 ];
 const Main = () => {
   const navigate = useNavigate();
