@@ -8,7 +8,7 @@ import logo_65bc7b from "../../img/main/logo-65bc7b.png";
 import logo_ffffff from "../../img/main/logo-ffffff.png";
 import Item from "./Item";
 import Carousel from "../Carousel/Carousel";
-import { items, items_1, items_2 } from "../../data/products";
+import { brand_items, items, items_1, items_2 } from "../../data/products";
 import banner_1 from "../../img/banners/banner-1.png";
 import banner_2 from "../../img/banners/banner-2.png";
 import banner_3 from "../../img/banners/banner-3.png";
@@ -324,29 +324,34 @@ const Main = () => {
             </div>
           </section>
           <section className="sale-section-wrapper">
-            {new Array(7).fill("*").map((el, i) => (
+            {brand_items.map((el, i) => (
               <section key={i} className="sale-section">
                 <div className="header-title">
                   <div className="wrap-1">
-                    <img src={movie_figure_icon} alt="movie-figure-icon" />
+                    <img
+                      src={require(`../../img/brand-logo-${i + 1}.png`)}
+                      alt="movie-figure-icon"
+                    />
                     <div className="wrap-2">
-                      <h1>마나가게 어페럴</h1>
-                      <p>Nike. 154,981개</p>
+                      <h1>{el.brand_name_kr}</h1>
+                      <p>{el.brand_name_en}. 154,981개</p>
                     </div>
                   </div>
                   <button>팔로우</button>
                 </div>
                 <section className="slide-items">
                   <div className="tape">
-                    {items.map((el, i) => (
+                    {new Array(3).fill("*").map((_el, _i) => (
                       <Item
-                        key={i}
+                        key={_i}
                         img_width="130px"
                         img_height="130px"
-                        id={i}
-                        price={el.price}
-                        description={el.description}
-                        img_src={require(`../../img/saleitem-${i}.png`)}
+                        id={_i}
+                        price={el.description[_i]["price"]}
+                        description={el.description[_i]["description"]}
+                        img_src={require(`../../img/${i}-${el.name}-${
+                          _i + 1
+                        }.png`)}
                         alternative={false}
                       />
                     ))}

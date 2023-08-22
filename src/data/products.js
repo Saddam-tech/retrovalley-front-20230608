@@ -61,6 +61,97 @@ export const products = [
   },
 ];
 
+export const brand_items = [
+  {
+    brand_name_kr: "나이키",
+    brand_name_en: "Nike",
+    name: "nike-brand",
+    description: [
+      {
+        price: "143,000원",
+        description: "나이키 킬샷 2 레더 크림 루키드 그린",
+        img_src: "toy-1",
+      },
+      {
+        price: "43,000원",
+        description: "NIKE PRO 드라이핏 나시 703097-010",
+        img_src: "car-1",
+      },
+      {
+        price: "92,000원",
+        description: "나이키 드라이핏 민소매 경량 타이트핏",
+        img_src: "ranger-1",
+      },
+    ],
+  },
+  {
+    brand_name_kr: "스톤아일랜드",
+    brand_name_en: "Stone Island",
+    name: "stone-island",
+    description: [
+      {
+        price: "218,000원",
+        description: "스톤아일랜드 레더 크림 루키드 그린",
+        img_src: "toy-1",
+      },
+      {
+        price: "266,000원",
+        description: "스톤아일랜드 PRO 드라이핏 STONE ISLAND",
+        img_src: "car-1",
+      },
+      {
+        price: "162,000원",
+        description: "드라이핏 민소매 경량 타이트핏",
+        img_src: "ranger-1",
+      },
+    ],
+  },
+  {
+    brand_name_kr: "아디다스",
+    brand_name_en: "Adidas",
+    name: "adidas-brand",
+    description: [
+      {
+        price: "143,000원",
+        description: "아디다스 킬샷 2 레더 크림 루키드 그린",
+        img_src: "toy-1",
+      },
+      {
+        price: "43,000원",
+        description: "ADIDAS PRO 드라이핏 나시 703097-010",
+        img_src: "car-1",
+      },
+      {
+        price: "92,000원",
+        description: "아디다스 드라이핏 민소매 경량 타이트핏",
+        img_src: "ranger-1",
+      },
+    ],
+  },
+  {
+    brand_name_kr: "노스페이스",
+    brand_name_en: "The North Face",
+    name: "the-north-face",
+    description: [
+      {
+        price: "482,000원",
+        description: "아디다스 킬샷 2 레더 크림 루키드 그린",
+        img_src: "toy-1",
+      },
+      {
+        price: "618,000원",
+        description: "ADIDAS PRO 드라이핏 나시 703097-010",
+        img_src: "car-1",
+      },
+      {
+        price: "335,000원",
+        description: "아디다스 드라이핏 민소매 경량 타이트핏",
+        img_src: "ranger-1",
+      },
+    ],
+  },
+];
+
 export const items = [
   {
     price: "146,000원",
