@@ -46,7 +46,7 @@ const Content = () => {
 
       <img
         className="product-image"
-        src={require(`../img/ads.png`)}
+        src={require(`../img/banners/${map_type_to_content[type]["banner"]}.png`)}
         alt="retro-toy"
       />
       <div className="img-holder">
@@ -55,7 +55,9 @@ const Content = () => {
           <p>지금 마나페이로 구매하고, 마나를 모으세요!</p>
         </div>
       </div>
-      <h1>{map_type_to_content[type]["description"]}</h1>
+      <h1 className="description-tag">
+        {map_type_to_content[type]["description"]}
+      </h1>
       <section className="products">
         {map_type_to_content[type]["arr"].map((el, i) => (
           <Item
@@ -67,6 +69,7 @@ const Content = () => {
             description={el.description}
             img_src={require(`../img/${map_type_to_content[type]["folder"]}/${el.img_src}.png`)}
             alternative={false}
+            disallow_navigate={type !== "figure"}
           />
         ))}
       </section>
@@ -200,10 +203,7 @@ const Container = styled.section`
       }
     }
   }
-  h1 {
-    padding: 10px;
-    font-size: 20px;
-  }
+
   .products {
     display: flex;
     align-items: center;
@@ -215,5 +215,10 @@ const Container = styled.section`
   }
   .products::-webkit-scrollbar {
     height: 0;
+  }
+
+  .description-tag {
+    padding: 10px;
+    font-size: 20px;
   }
 `;

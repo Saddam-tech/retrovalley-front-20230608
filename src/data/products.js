@@ -302,28 +302,28 @@ export const comics_items = [
 export const map_type_to_content = {
   figure: {
     title: "피규어",
-    banner: "",
+    banner: "figure-banner",
     description: "한정판 레트로 피규어는 레트로밸리에서….",
     folder: "product_img",
     arr: items,
   },
   toy: {
     title: "토이",
-    banner: "",
+    banner: "toy-banner",
     description: "레트로밸리 토이로 레트로 감성 인싸가 되세요.",
     folder: "toys",
     arr: toy_items,
   },
   webtoon: {
     title: "웹툰",
-    banner: "",
+    banner: "webtoon-banner",
     description: "레트로밸리 웹툰 아카이브 라이브러리에 오신걸 환영해요!",
     folder: "comics",
     arr: webtoon_items,
   },
   comics: {
     title: "고전만화",
-    banner: "",
+    banner: "comics-banner",
     description: "잊혀졌던 어린시절 나만의 영웅들을 찾아라~!!!",
     folder: "comics",
     arr: comics_items,

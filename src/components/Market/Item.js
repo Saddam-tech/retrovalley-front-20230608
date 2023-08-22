@@ -10,19 +10,25 @@ const Item = ({
   img_width,
   img_height,
   alternative,
+  disallow_navigate,
 }) => {
   const navigate = useNavigate();
+  function handleNavigate() {
+    if (disallow_navigate) {
+      navigate("/home/nomatch");
+      return;
+    }
+    navigate(
+      alternative !== false
+        ? `/readcontent/${alternative}`
+        : `/products/product/${id}`
+    );
+  }
   return (
     <Container
       img_width={img_width}
       img_height={img_height}
-      onClick={() =>
-        navigate(
-          alternative !== false
-            ? `/readcontent/${alternative}`
-            : `/products/product/${id}`
-        )
-      }
+      onClick={handleNavigate}
     >
       <img src={img_src} alt="nft-sample" />
       <div className="title">

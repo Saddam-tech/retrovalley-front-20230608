@@ -243,7 +243,7 @@ const Main = () => {
                           img_height="130px"
                           id={_i}
                           description={el.description}
-                          img_src={require(`../../img/comics/comics_${el.index}.png`)}
+                          img_src={require(`../../img/comics/comics-${el.index}.png`)}
                           alternative={el.index}
                         />
                       ))}
@@ -255,7 +255,7 @@ const Main = () => {
                           img_height="130px"
                           id={_i}
                           description={el.description}
-                          img_src={require(`../../img/comics/comics_${el.index}.png`)}
+                          img_src={require(`../../img/comics/comics-${el.index}.png`)}
                           alternative={el.index}
                         />
                       ))}
