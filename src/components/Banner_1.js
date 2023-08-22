@@ -44,7 +44,7 @@ const Container = styled.section`
     align-items: center;
     justify-content: center;
     gap: 5px;
-    bottom: 80px;
+    bottom: 60px;
     .next-btn {
       width: 50px;
       height: 50px;
@@ -58,7 +58,7 @@ const Container = styled.section`
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     width: 80%;
     hr {
       background-color: #afaeae;
