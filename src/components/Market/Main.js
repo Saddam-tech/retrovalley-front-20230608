@@ -32,15 +32,15 @@ const links = ["추천상품", "레밸UP", "레밸랭킹"];
 const categories = [
   "나이키",
   "스톤아일랜드",
-  "환경부",
+  // "환경부",
   "Apple 아이맥 5K",
   "나이키",
   "스톤아일랜드",
-  "환경부",
+  // "환경부",
   "Apple 아이맥 5K",
   "나이키",
   "스톤아일랜드",
-  "환경부",
+  // "환경부",
   "Apple 아이맥 5K",
 ];
 const map_item_names = [
@@ -48,8 +48,8 @@ const map_item_names = [
   "토이",
   "웹툰",
   "고전만화",
-  "레고",
-  "레전드IP",
+  "단행본",
+  "만화책",
   "명품관",
   "베어브릭",
 ];
@@ -359,6 +359,7 @@ const Main = () => {
                           _i + 1
                         }.png`)}
                         alternative={false}
+                        disallow_navigate={true}
                       />
                     ))}
                   </div>

@@ -40,7 +40,7 @@ const Login = () => {
       </section>
       <section className="btn-holder">
         <button onClick={() => navigate("/home/main")}>로그인</button>
-        <div className="button-div"></div>
+        {/* <div className="button-div"></div> */}
       </section>
       <h2>간편 로그인</h2>
       <section className="social-login-box">
@@ -185,7 +185,7 @@ const Container = styled.section`
       font-weight: 800;
       z-index: 1;
     }
-    .button-div {
+    /* .button-div {
       position: absolute;
       background: #65bc7b;
       opacity: 0.5;
@@ -193,7 +193,7 @@ const Container = styled.section`
       height: 90%;
       bottom: -10px;
       border-radius: 10px;
-    }
+    } */
   }
   h2 {
     width: 100%;

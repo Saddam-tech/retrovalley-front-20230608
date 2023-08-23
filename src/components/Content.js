@@ -68,8 +68,8 @@ const Content = () => {
             price={el.price}
             description={el.description}
             img_src={require(`../img/${map_type_to_content[type]["folder"]}/${el.img_src}.png`)}
-            alternative={false}
-            disallow_navigate={type !== "figure"}
+            alternative={el.description === "" ? i : false}
+            disallow_navigate={!el.show}
           />
         ))}
       </section>
