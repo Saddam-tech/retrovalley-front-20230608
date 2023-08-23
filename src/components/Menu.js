@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import Sections from "./Sections";
 import MovieFigureIcon from "../Icons/MovieFigureIcon";
@@ -185,6 +185,11 @@ const section_9 = [
 
 const Menu = () => {
   const navigate = useNavigate();
+  const location = useLocation;
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <Container>
       <div className="header">

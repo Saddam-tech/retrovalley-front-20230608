@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import ArrowForwardIosTwoToneIcon from "@mui/icons-material/ArrowForwardIosTwoTone";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Category = ({ pageName, main, sub }) => {
   const navigate = useNavigate();
+  const location = useLocation;
   const MAP_PATH_TO_STRING = {
     단행본: true,
     연재본: true,
@@ -22,6 +23,10 @@ const Category = ({ pageName, main, sub }) => {
       navigate(path);
     }
   }
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <Container>
       <div className="header">

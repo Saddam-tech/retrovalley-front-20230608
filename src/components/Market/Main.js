@@ -23,7 +23,7 @@ import movie_figure_icon from "../../img/webtoon-icon.png";
 import movie_figure_icon_2 from "../../img/webtoon-icon-2.png";
 import check_orange from "../../img/checked.svg";
 import AnimatedCarousel from "../Carousel/AnimatedCarousel";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const images = [banner_7, banner_8, banner_1, banner_2, banner_3];
 const banners = [banner_9, banner_10, banner_11, banner_12];
@@ -76,6 +76,7 @@ const Main = () => {
   const [isTransparent, setIsTransparent] = React.useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState(0);
+  const location = useLocation;
 
   const handleScroll = () => {
     if (window.scrollY === 0) {
@@ -100,6 +101,10 @@ const Main = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <Container isTransparent={isTransparent}>
       <div className="header">

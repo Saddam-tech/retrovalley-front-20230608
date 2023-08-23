@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
@@ -16,6 +16,10 @@ const Products = () => {
 
   const searchParams = new URLSearchParams(location.search);
   const pageTitle = searchParams.get("string");
+  useEffect(() => {
+    // auto-scroll page to the top upon view change
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <Container switch={dropdown}>
       <div className="header">

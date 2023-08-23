@@ -20,7 +20,7 @@ const Product = ({
   }, [location]);
 
   return (
-    <Container onClick={() => navigate(`/readcontent/3`)}>
+    <Container onClick={() => navigate(`/home/nomatch`)}>
       <img className="nft-sample" src={nft_img_src} alt="nft-sample" />
       <div className="title">
         <h1>{img_title}</h1>
