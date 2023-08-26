@@ -11,16 +11,16 @@ const Banner_1 = () => {
       <div className="wrap">
         <p>어린시절, 골목을 함께 뛰놀았던 나만의 영웅들</p>
         <img
-          onClick={() => navigate("/start")}
+          onClick={() => navigate("/login")}
           className="next-btn"
           src={next_btn}
           alt="next-btn"
         />
       </div>
-      <div className="line-holder">
+      {/* <div className="line-holder">
         <hr className="active" />
         <hr />
-      </div>
+      </div> */}
     </Container>
   );
 };

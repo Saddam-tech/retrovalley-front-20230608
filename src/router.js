@@ -4,7 +4,7 @@ import ReadContent from "./components/ReadContent";
 import ComicBook from "./components/ComicBook";
 import Login from "./components/Login";
 import ProductUpload from "./components/ProductUpload";
-import Banner_2 from "./components/Banner_2";
+// import Banner_2 from "./components/Banner_2";
 
 export const router = [
   {
@@ -37,10 +37,10 @@ export const router = [
     path: "/product_upload",
     element: <ProductUpload />,
   },
-  {
-    route: "Banner",
-    path: "/start",
-    // eslint-disable-next-line react/jsx-pascal-case
-    element: <Banner_2 />,
-  },
+  // {
+  //   route: "Banner",
+  //   path: "/start",
+  // eslint-disable-next-line react/jsx-pascal-case
+  //   element: <Banner_2 />,
+  // },
 ];

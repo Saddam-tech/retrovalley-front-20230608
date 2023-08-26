@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <Container>
       <section className="top-bar">
-        <ArrowBackIosIcon />
+        <ArrowBackIosIcon onClick={() => navigate(-1)} />
         <h1>로그인</h1>
       </section>
       <section className="title-bar">
